@@ -128,27 +128,6 @@
   margin: 0 auto 0.25rem;
 }
 
-.hero-badges {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.4rem;
-  margin: 0 0 0.9rem;
-}
-
-.hero-badge {
-  display: inline-block;
-  padding: 0.15rem 0.5rem;
-  border-radius: 999px;
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.88);
-  background: #1a1a1a;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
 .hero .md-button {
   margin: 0.35rem 0.2rem 0;
   font-size: 0.8rem;
@@ -159,8 +138,8 @@
 .hero-install {
   position: relative;
   width: 100%;
-  max-width: 24rem;
-  margin: 1rem auto 0.85rem;
+  max-width: 22rem;
+  margin: 0.85rem auto 0.65rem;
   text-align: left;
   border-radius: 0.4rem;
   padding: 1px;
@@ -193,18 +172,18 @@
   border-radius: calc(0.4rem - 1px);
   box-shadow: none !important;
   background: #282828 !important;
-  padding: 0.55rem 0.75rem !important;
+  padding: 0.3rem 0.5rem !important;
 }
 
 .hero-install code {
-  font-size: 0.8rem;
-  line-height: 1.45;
+  font-size: 0.78rem;
+  line-height: 1.35;
 }
 
 .hero-install .md-clipboard {
   color: var(--oc-mint, #34dab7);
-  top: 0.45rem;
-  right: 0.45rem;
+  top: 0.3rem;
+  right: 0.3rem;
 }
 
 .hero-install .md-clipboard:hover {
