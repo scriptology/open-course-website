@@ -23,6 +23,7 @@
   --md-accent-fg-color: #34dab7;
   --md-accent-fg-color--transparent: rgba(52, 218, 183, 0.1);
   --md-typeset-a-color: #34dab7;
+  --md-typeset-font-size: 0.8rem;
   --oc-amber: #fcb05d;
   --oc-mint: #34dab7;
   --oc-blue: #14539d;
@@ -43,7 +44,7 @@
 }
 
 .md-content {
-  max-width: 48rem;
+  max-width: 44rem;
   margin-inline: auto;
 }
 
@@ -52,6 +53,11 @@
 .md-content,
 .md-typeset {
   background-color: transparent;
+}
+
+.md-typeset {
+  font-size: 0.875rem;
+  line-height: 1.55;
 }
 
 .md-typeset h1,
@@ -63,14 +69,28 @@
   letter-spacing: 0.02em;
 }
 
+.md-typeset h2 {
+  font-size: 1.15rem;
+  margin: 1.75rem 0 0.75rem;
+}
+
+.md-typeset h3 {
+  font-size: 0.95rem;
+}
+
 .hero {
   text-align: center;
-  padding: 3rem 0 2rem;
+  padding: 2.25rem 0 1.5rem;
+  min-height: min(72vh, 32rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .md-typeset .hero-logo,
 .md-typeset h1.hero-logo {
-  margin: 0 0 1.25rem;
+  margin: 0 0 0.85rem;
   padding: 0;
   border: none;
   font-size: inherit;
@@ -83,14 +103,14 @@
 .hero-logo-text {
   display: inline-flex;
   align-items: baseline;
-  gap: 0.75em;
-  font-size: 1.75rem;
+  gap: 0.7em;
+  font-size: 1.45rem;
   line-height: 1.2;
   color: #ffffff;
   letter-spacing: 0.1em;
   font-weight: 700;
-  -webkit-text-stroke: 0.4px currentColor;
-  text-shadow: 0.4px 0 0 currentColor, -0.4px 0 0 currentColor;
+  -webkit-text-stroke: 0.35px currentColor;
+  text-shadow: 0.35px 0 0 currentColor, -0.35px 0 0 currentColor;
 }
 
 .hero-logo-text .glyph {
@@ -101,37 +121,48 @@
 }
 
 .hero p {
-  font-size: 1.125rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
   color: var(--md-default-fg-color--light);
-  max-width: 42rem;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 34rem;
+  margin: 0 auto 0.25rem;
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+  margin: 0 0 0.9rem;
 }
 
 .hero-badge {
   display: inline-block;
-  margin-bottom: 1rem;
-  padding: 0.25rem 0.75rem;
+  padding: 0.15rem 0.5rem;
   border-radius: 999px;
-  font-size: 0.8rem;
+  font-size: 0.65rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #1a1208;
-  background: var(--oc-amber, #fcb05d);
+  color: rgba(255, 255, 255, 0.88);
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .hero .md-button {
-  margin: 0.5rem 0.25rem;
+  margin: 0.35rem 0.2rem 0;
+  font-size: 0.8rem;
+  padding: 0.45em 1.1em;
 }
 
 /* Install block with rotating gradient border */
 .hero-install {
   position: relative;
-  max-width: 36rem;
-  margin: 1.5rem auto 1.25rem;
+  width: 100%;
+  max-width: 24rem;
+  margin: 1rem auto 0.85rem;
   text-align: left;
-  border-radius: 0.5rem;
+  border-radius: 0.4rem;
   padding: 1px;
   overflow: hidden;
   isolation: isolate;
@@ -159,18 +190,21 @@
   z-index: 1;
   margin: 0;
   border: none !important;
-  border-radius: calc(0.5rem - 1px);
+  border-radius: calc(0.4rem - 1px);
   box-shadow: none !important;
   background: #282828 !important;
+  padding: 0.55rem 0.75rem !important;
 }
 
 .hero-install code {
-  font-size: 1.05rem;
-  line-height: 1.6;
+  font-size: 0.8rem;
+  line-height: 1.45;
 }
 
 .hero-install .md-clipboard {
   color: var(--oc-mint, #34dab7);
+  top: 0.45rem;
+  right: 0.45rem;
 }
 
 .hero-install .md-clipboard:hover {
@@ -194,13 +228,13 @@
 .mechanics {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  margin-top: 1rem;
+  gap: 1rem;
+  margin-top: 0.75rem;
 }
 
 .mechanics-card {
-  padding: 1.25rem;
-  border-radius: 0.5rem;
+  padding: 0.95rem 1rem;
+  border-radius: 0.45rem;
   background: #3a3a3a;
   border: 1px solid rgba(255, 255, 255, 0.12) !important;
   border-width: 1px !important;
@@ -210,7 +244,8 @@
 
 .mechanics-card h3 {
   margin-top: 0;
-  font-size: 1.15rem;
+  margin-bottom: 0.45rem;
+  font-size: 0.9rem;
   font-weight: 700;
   color: var(--oc-mint, #34dab7);
   border: none !important;
@@ -219,10 +254,11 @@
 
 .mechanics-card ul {
   margin-bottom: 0;
+  font-size: 0.85rem;
 }
 
 .mechanics-card li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.35rem;
 }
 
 .mechanics-card li:last-child {
@@ -232,13 +268,13 @@
 .steps {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
-  margin-top: 1rem;
+  gap: 1rem;
+  margin-top: 0.75rem;
 }
 
 .step-card {
-  padding: 1.25rem;
-  border-radius: 0.5rem;
+  padding: 0.95rem 1rem;
+  border-radius: 0.45rem;
   background: #3a3a3a;
   border: 1px solid rgba(255, 255, 255, 0.12) !important;
   border-width: 1px !important;
@@ -248,11 +284,17 @@
 
 .step-card h3 {
   margin-top: 0;
-  font-size: 1.05rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
   font-weight: 700;
   color: var(--oc-amber, #fcb05d);
   border: none !important;
   box-shadow: none !important;
+}
+
+.step-card p {
+  font-size: 0.85rem;
+  margin-bottom: 0;
 }
 
 .step-card p:last-child {
@@ -261,15 +303,21 @@
 
 .cta-section {
   text-align: center;
-  padding: 3rem 0 2rem;
+  padding: 2.25rem 0 1.5rem;
 }
 
 .cta-section h2 {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.55rem;
+  font-size: 1.1rem;
+}
+
+.cta-section p {
+  font-size: 0.9rem;
 }
 
 .cta-section .md-button {
-  margin: 0.5rem 0.25rem;
+  margin: 0.4rem 0.2rem;
+  font-size: 0.8rem;
 }
 
 .md-typeset .md-button--primary {
@@ -284,10 +332,19 @@
   color: #0b1a17;
 }
 
+.md-footer {
+  font-size: 0.75rem;
+}
+
 @media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding: 1.75rem 0 1.25rem;
+  }
+
   .hero-logo-text {
-    font-size: 1.35rem;
-    gap: 0.6em;
+    font-size: 1.2rem;
+    gap: 0.55em;
   }
 
   .mechanics,
@@ -295,7 +352,11 @@
     grid-template-columns: 1fr;
   }
 
+  .hero-install {
+    max-width: 100%;
+  }
+
   .hero-install code {
-    font-size: 0.9rem;
+    font-size: 0.75rem;
   }
 }
