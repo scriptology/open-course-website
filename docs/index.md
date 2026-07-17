@@ -1,5 +1,5 @@
 ---
-description: Terminal AI tutor for language learning. Bring your own API key or Ollama — exercises, lessons, and analysis via the provider you choose.
+description: Terminal AI tutor for language learning. Bring your own API key or Ollama. Exercises, lessons, and analysis via the provider you choose.
 hide:
   - navigation
   - toc
@@ -9,7 +9,7 @@ hide:
 
 <h1 class="hero-logo"><span class="hero-logo-text"><span class="glyph">&gt;_</span>OPEN COURSE</span></h1>
 
-<p class="hero-lead">A terminal AI tutor for language learning. You bring the API key or Ollama — the app generates translation exercises, analyzes answers, and schedules reviews from your weak topics.</p>
+<p class="hero-lead">A terminal AI tutor for language learning. You bring the API key or Ollama. The app generates translation exercises, analyzes answers, and schedules reviews from your weak topics.</p>
 
 <div class="hero-install">
   <div class="hero-install-inner">
@@ -34,7 +34,7 @@ hide:
 ### Your keys, your model
 
 - OpenAI, Anthropic, Gemini, DeepSeek, Mistral, OpenRouter, Ollama, or any OpenAI-compatible endpoint
-- API keys stay on your machine — no hosted account required
+- API keys stay on your machine. No hosted account required.
 - Pick provider, base URL, and model during onboarding
 
 </div>
@@ -113,7 +113,7 @@ Answers are analyzed; scores update and weak spots feed later sessions.
 
 ## Bring your own model
 
-No subscription. Configure a provider once — practice with your API key or fully local Ollama.
+No subscription. Configure a provider once. Practice with your API key or fully local Ollama.
 
 [:fontawesome-brands-github: View on GitHub](https://github.com/scriptology/open-course-cli){ .md-button .md-button--primary }
 
