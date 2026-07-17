@@ -16,7 +16,6 @@ custom_dir = "overrides"
 features = [
   "content.code.copy",
   "content.code.select",
-  "navigation.top",
   "navigation.footer",
 ]
 

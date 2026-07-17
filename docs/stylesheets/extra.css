@@ -28,10 +28,23 @@
   --oc-blue: #14539d;
 }
 
-.md-header {
-  background-color: #303030;
-  box-shadow: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+/* No top chrome on this landing page */
+.md-header,
+.md-tabs,
+.md-sidebar,
+.md-top,
+.md-dialog,
+.md-progress {
+  display: none !important;
+}
+
+.md-main__inner {
+  margin-top: 0;
+}
+
+.md-content {
+  max-width: 48rem;
+  margin-inline: auto;
 }
 
 .md-main,
@@ -41,53 +54,50 @@
   background-color: transparent;
 }
 
-/* Hide search icon in header (search dialog is removed via template override) */
-.md-header__button[for="__search"],
-.md-header__source {
-  display: none !important;
-}
-
-.md-header__option {
-  margin-left: auto;
-}
-
 .md-typeset h1,
 .md-typeset h2,
 .md-typeset h3,
 .hero-logo-text {
   font-family: "Geist Pixel", ui-monospace, monospace;
-  font-weight: 400;
   font-feature-settings: normal;
   letter-spacing: 0.02em;
 }
 
 .hero {
   text-align: center;
-  padding: 2.5rem 0 2rem;
+  padding: 3rem 0 2rem;
 }
 
-.hero-logo {
-  margin-bottom: 1.25rem;
+.md-typeset .hero-logo,
+.md-typeset h1.hero-logo {
+  margin: 0 0 1.25rem;
+  padding: 0;
+  border: none;
+  font-size: inherit;
+  line-height: 1;
+  color: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
 }
 
 .hero-logo-text {
-  display: inline-block;
-  font-size: 2.75rem;
-  line-height: 1.15;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.75em;
+  font-size: 1.75rem;
+  line-height: 1.2;
   color: #ffffff;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  -webkit-text-stroke: 0.4px currentColor;
+  text-shadow: 0.4px 0 0 currentColor, -0.4px 0 0 currentColor;
 }
 
 .hero-logo-text .glyph {
   color: var(--oc-mint, #34dab7);
-  margin-right: 0.35em;
-}
-
-.hero h1 {
-  font-size: 2rem;
-  line-height: 1.25;
-  margin-bottom: 0.75rem;
-  color: #ffffff;
+  margin-right: 0;
+  flex-shrink: 0;
+  -webkit-text-stroke-color: var(--oc-mint, #34dab7);
 }
 
 .hero p {
@@ -115,19 +125,43 @@
   margin: 0.5rem 0.25rem;
 }
 
+/* Install block with rotating gradient border */
 .hero-install {
+  position: relative;
   max-width: 36rem;
   margin: 1.5rem auto 1.25rem;
   text-align: left;
+  border-radius: 0.5rem;
+  padding: 1px;
+  overflow: hidden;
+  isolation: isolate;
+  background: #282828;
+}
+
+.hero-install::before {
+  content: "";
+  position: absolute;
+  inset: -60%;
+  z-index: 0;
+  background: conic-gradient(
+    from 0deg,
+    #34dab7 0deg,
+    #14539d 120deg,
+    #fcb05d 240deg,
+    #34dab7 360deg
+  );
+  animation: oc-border-spin 4s linear infinite;
 }
 
 .hero-install .highlight,
 .hero-install pre {
+  position: relative;
+  z-index: 1;
   margin: 0;
-  border-radius: 0.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow: none;
-  background: #282828;
+  border: none !important;
+  border-radius: calc(0.5rem - 1px);
+  box-shadow: none !important;
+  background: #282828 !important;
 }
 
 .hero-install code {
@@ -143,6 +177,20 @@
   color: #5ee6c9;
 }
 
+@keyframes oc-border-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-install::before {
+    animation: none;
+    background: #34dab7;
+    inset: 0;
+  }
+}
+
 .mechanics {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -154,14 +202,19 @@
   padding: 1.25rem;
   border-radius: 0.5rem;
   background: #3a3a3a;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: none;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-width: 1px !important;
+  box-shadow: none !important;
+  outline: none;
 }
 
 .mechanics-card h3 {
   margin-top: 0;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
+  font-weight: 700;
   color: var(--oc-mint, #34dab7);
+  border: none !important;
+  box-shadow: none !important;
 }
 
 .mechanics-card ul {
@@ -187,14 +240,19 @@
   padding: 1.25rem;
   border-radius: 0.5rem;
   background: #3a3a3a;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: none;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-width: 1px !important;
+  box-shadow: none !important;
+  outline: none;
 }
 
 .step-card h3 {
   margin-top: 0;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
+  font-weight: 700;
   color: var(--oc-amber, #fcb05d);
+  border: none !important;
+  box-shadow: none !important;
 }
 
 .step-card p:last-child {
@@ -228,11 +286,8 @@
 
 @media (max-width: 768px) {
   .hero-logo-text {
-    font-size: 1.75rem;
-  }
-
-  .hero h1 {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
+    gap: 0.6em;
   }
 
   .mechanics,

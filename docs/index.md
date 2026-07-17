@@ -7,9 +7,7 @@ hide:
 
 <div class="hero" markdown>
 
-<div class="hero-logo">
-  <span class="hero-logo-text"><span class="glyph">&gt;_</span>OPEN COURSE</span>
-</div>
+<h1 class="hero-logo"><span class="hero-logo-text"><span class="glyph">&gt;_</span>OPEN COURSE</span></h1>
 
 <span class="hero-badge">Terminal · AI · Languages</span>
 

@@ -1,13 +1,15 @@
 {% extends "base.html" %}
 
+{% block header %}{% endblock %}
+
+{% block htmltitle %}
+  <title>{{ config.site_name }}</title>
+{% endblock %}
+
 {% block extrahead %}
   {{ super() }}
 
-  {% if page and page.title and page.title != config.site_name %}
-    {% set og_title = page.title ~ " - " ~ config.site_name %}
-  {% else %}
-    {% set og_title = config.site_name %}
-  {% endif %}
+  {% set og_title = config.site_name %}
   {% set og_description = page.meta.description if page and page.meta and page.meta.description else config.site_description %}
   {% set og_url = page.canonical_url if page and page.canonical_url else config.site_url %}
   {% set og_image = config.site_url ~ "assets/og.png" %}
