@@ -166,7 +166,7 @@
     #fcb05d 240deg,
     #34dab7 360deg
   );
-  animation: oc-border-spin 4s linear infinite;
+  animation: oc-border-spin 12s linear infinite;
 }
 
 .hero-install-inner {
