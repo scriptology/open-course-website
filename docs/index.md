@@ -9,7 +9,7 @@ hide:
 
 <h1 class="hero-logo"><span class="hero-logo-text"><span class="glyph">&gt;_</span>OPEN COURSE</span></h1>
 
-<p class="hero-lead">A terminal AI tutor for language learning. The app generates translation exercises, analyzes answers, and schedules reviews from your weak topics.</p>
+<p class="hero-lead">Learn languages in the terminal with a tutor that adapts to you. Practice in short sessions, get clear feedback on mistakes, and keep improving where you are weakest.</p>
 
 <div class="hero-install">
   <div class="hero-install-inner">
