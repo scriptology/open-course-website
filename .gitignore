@@ -1,0 +1,17 @@
+# Python virtual environment
+.venv/
+venv/
+
+# Zensical build output
+site/
+.cache/
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+
+# Logs
+*.log
