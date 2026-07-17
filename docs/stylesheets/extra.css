@@ -134,7 +134,7 @@
   padding: 0.45em 1.1em;
 }
 
-/* Install block with rotating gradient border */
+/* Install block with rotating gradient border + in-field copy */
 .hero-install {
   position: relative;
   width: 100%;
@@ -163,31 +163,77 @@
   animation: oc-border-spin 4s linear infinite;
 }
 
-.hero-install .highlight,
-.hero-install pre {
+.hero-install-inner {
   position: relative;
   z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   margin: 0;
-  border: none !important;
   border-radius: calc(0.4rem - 1px);
-  box-shadow: none !important;
-  background: #282828 !important;
-  padding: 0.3rem 0.5rem !important;
+  background: #282828;
+  padding: 0.4rem 0.45rem 0.4rem 0.65rem;
 }
 
-.hero-install code {
+.hero-install code,
+.hero-install #install-cmd {
+  flex: 1;
+  min-width: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: var(--md-code-fg-color, #e6e6e6);
   font-size: 0.78rem;
   line-height: 1.35;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.hero-install .md-clipboard {
+.hero-install-copy {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0.3rem;
+  background: transparent;
   color: var(--oc-mint, #34dab7);
-  top: 0.3rem;
-  right: 0.3rem;
+  cursor: pointer;
+  transition: color 0.15s ease, background-color 0.15s ease;
 }
 
-.hero-install .md-clipboard:hover {
+.hero-install-copy:hover {
   color: #5ee6c9;
+  background: rgba(52, 218, 183, 0.12);
+}
+
+.hero-install-copy:focus-visible {
+  outline: 1px solid var(--oc-mint, #34dab7);
+  outline-offset: 1px;
+}
+
+.hero-install-copy .icon-check {
+  display: none;
+}
+
+.hero-install-copy.is-copied {
+  color: var(--oc-mint, #34dab7);
+}
+
+.hero-install-copy.is-copied .icon-copy {
+  display: none;
+}
+
+.hero-install-copy.is-copied .icon-check {
+  display: block;
 }
 
 @keyframes oc-border-spin {
@@ -226,7 +272,7 @@
   margin-bottom: 0.45rem;
   font-size: 0.9rem;
   font-weight: 700;
-  color: var(--oc-mint, #34dab7);
+  color: #ffffff;
   border: none !important;
   box-shadow: none !important;
 }
@@ -266,7 +312,7 @@
   margin-bottom: 0.4rem;
   font-size: 0.9rem;
   font-weight: 700;
-  color: var(--oc-amber, #fcb05d);
+  color: #ffffff;
   border: none !important;
   box-shadow: none !important;
 }

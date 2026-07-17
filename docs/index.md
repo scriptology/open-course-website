@@ -9,14 +9,16 @@ hide:
 
 <h1 class="hero-logo"><span class="hero-logo-text"><span class="glyph">&gt;_</span>OPEN COURSE</span></h1>
 
-**Terminal AI tutor for languages.** Bring your own API key (or Ollama) — exercises, lessons, and answer analysis run through the provider you choose.
+**Terminal AI tutor for languages.**
 
-<div class="hero-install" markdown>
-
-```bash
-cargo install open-course-cli
-```
-
+<div class="hero-install">
+  <div class="hero-install-inner">
+    <code id="install-cmd">cargo install open-course-cli</code>
+    <button type="button" class="hero-install-copy" aria-label="Copy install command" data-copy="cargo install open-course-cli">
+      <svg class="icon-copy" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+      <svg class="icon-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+    </button>
+  </div>
 </div>
 
 [:fontawesome-brands-github: GitHub](https://github.com/scriptology/open-course-cli){ .md-button .md-button--primary }
@@ -61,7 +63,7 @@ cargo install open-course-cli
 
 ### Local-first data
 
-- Curriculum, progress, and history stored on disk under `.open-course-cli/`
+- Curriculum, progress, and history stored on disk
 - Isolated data per language pair; provider settings are global
 - Works offline for everything except LLM calls
 
