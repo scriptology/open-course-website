@@ -7,13 +7,9 @@ hide:
 
 <div class="hero" markdown>
 
-<div class="hero-logo" markdown>
-
-![Open Course CLI](assets/logo.svg){ width="72" }
-
+<div class="hero-logo">
+  <span class="hero-logo-text"><span class="glyph">&gt;_</span>OPEN COURSE</span>
 </div>
-
-# Open Course CLI
 
 <span class="hero-badge">Terminal · AI · Languages</span>
 

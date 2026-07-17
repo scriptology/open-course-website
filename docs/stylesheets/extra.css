@@ -1,14 +1,44 @@
+@font-face {
+  font-family: "Geist Pixel";
+  src: url("../assets/fonts/GeistPixel-Square.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* TUI palette: mint #34dab7, deep blue #14539d, amber #fcb05d */
 [data-md-color-scheme="slate"] {
+  --md-default-bg-color: #303030;
+  --md-default-bg-color--light: #383838;
+  --md-default-bg-color--lighter: #404040;
+  --md-default-bg-color--lightest: #3a3a3a;
+  --md-code-bg-color: #282828;
+  --md-footer-bg-color: #303030;
+  --md-footer-bg-color--dark: #282828;
   --md-primary-fg-color: #14539d;
   --md-primary-fg-color--light: #1a6bc4;
   --md-primary-fg-color--dark: #0f3d75;
+  --md-primary-bg-color: #303030;
+  --md-primary-bg-color--light: #383838;
   --md-accent-fg-color: #34dab7;
   --md-accent-fg-color--transparent: rgba(52, 218, 183, 0.1);
   --md-typeset-a-color: #34dab7;
   --oc-amber: #fcb05d;
   --oc-mint: #34dab7;
   --oc-blue: #14539d;
+}
+
+.md-header {
+  background-color: #303030;
+  box-shadow: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.md-main,
+.md-main__inner,
+.md-content,
+.md-typeset {
+  background-color: transparent;
 }
 
 /* Hide search icon in header (search dialog is removed via template override) */
@@ -21,26 +51,43 @@
   margin-left: auto;
 }
 
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.hero-logo-text {
+  font-family: "Geist Pixel", ui-monospace, monospace;
+  font-weight: 400;
+  font-feature-settings: normal;
+  letter-spacing: 0.02em;
+}
+
 .hero {
   text-align: center;
   padding: 2.5rem 0 2rem;
 }
 
 .hero-logo {
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 
-.hero-logo img {
+.hero-logo-text {
   display: inline-block;
-  border-radius: 0.75rem;
-  box-shadow: 0 4px 24px rgba(20, 83, 157, 0.35);
+  font-size: 2.75rem;
+  line-height: 1.15;
+  color: #ffffff;
+  letter-spacing: 0.08em;
+}
+
+.hero-logo-text .glyph {
+  color: var(--oc-mint, #34dab7);
+  margin-right: 0.35em;
 }
 
 .hero h1 {
-  font-size: 2.5rem;
-  line-height: 1.2;
+  font-size: 2rem;
+  line-height: 1.25;
   margin-bottom: 0.75rem;
-  color: var(--md-primary-fg-color--light, #1a6bc4);
+  color: #ffffff;
 }
 
 .hero p {
@@ -78,8 +125,9 @@
 .hero-install pre {
   margin: 0;
   border-radius: 0.5rem;
-  border: 1px solid rgba(52, 218, 183, 0.35);
-  box-shadow: 0 0 0 1px rgba(20, 83, 157, 0.25), 0 8px 32px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: none;
+  background: #282828;
 }
 
 .hero-install code {
@@ -105,9 +153,9 @@
 .mechanics-card {
   padding: 1.25rem;
   border-radius: 0.5rem;
-  background: var(--md-default-bg-color--lightest, rgba(255, 255, 255, 0.05));
-  border: 1px solid rgba(20, 83, 157, 0.45);
-  border-top: 2px solid var(--oc-blue, #14539d);
+  background: #3a3a3a;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: none;
 }
 
 .mechanics-card h3 {
@@ -138,8 +186,9 @@
 .step-card {
   padding: 1.25rem;
   border-radius: 0.5rem;
-  background: var(--md-default-bg-color--lightest, rgba(255, 255, 255, 0.05));
-  border: 1px solid rgba(52, 218, 183, 0.2);
+  background: #3a3a3a;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: none;
 }
 
 .step-card h3 {
@@ -178,8 +227,12 @@
 }
 
 @media (max-width: 768px) {
+  .hero-logo-text {
+    font-size: 1.75rem;
+  }
+
   .hero h1 {
-    font-size: 1.875rem;
+    font-size: 1.5rem;
   }
 
   .mechanics,
