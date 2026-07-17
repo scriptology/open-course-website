@@ -120,12 +120,18 @@
   -webkit-text-stroke-color: var(--oc-mint, #34dab7);
 }
 
-.hero p {
-  font-size: 0.95rem;
-  line-height: 1.55;
+.hero p,
+.hero-lead {
+  font-size: 0.92rem;
+  font-weight: 300;
+  line-height: 1.6;
   color: var(--md-default-fg-color--light);
   max-width: 34rem;
   margin: 0 auto 0.25rem;
+}
+
+.hero-lead {
+  letter-spacing: 0.01em;
 }
 
 .hero .md-button {

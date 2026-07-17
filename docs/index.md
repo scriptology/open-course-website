@@ -9,7 +9,7 @@ hide:
 
 <h1 class="hero-logo"><span class="hero-logo-text"><span class="glyph">&gt;_</span>OPEN COURSE</span></h1>
 
-**Terminal AI tutor for languages.**
+<p class="hero-lead">A terminal AI tutor for language learning. You bring the API key or Ollama — the app generates translation exercises, analyzes answers, and schedules reviews from your weak topics.</p>
 
 <div class="hero-install">
   <div class="hero-install-inner">
