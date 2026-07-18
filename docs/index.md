@@ -25,8 +25,6 @@ hide:
 
 </div>
 
-## How it works
-
 <div class="term-demo" aria-label="Animated session demo">
   <div class="term-demo__bar">
     <span class="term-demo__dot term-demo__dot--r"></span>
@@ -36,8 +34,6 @@ hide:
   </div>
   <div class="term-demo__screen" id="term-demo-screen" aria-live="polite"></div>
 </div>
-
-## Features
 
 <div class="mechanics" markdown>
 
