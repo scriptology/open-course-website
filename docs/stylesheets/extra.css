@@ -265,13 +265,34 @@
 }
 
 .mechanics-card {
-  padding: 0.95rem 1rem;
+  padding: 1rem 1rem 0.95rem;
   border-radius: 0.45rem;
   background: #1a1a1a;
   border: 1px solid rgba(255, 255, 255, 0.12) !important;
   border-width: 1px !important;
   box-shadow: none !important;
   outline: none;
+}
+
+.mechanics-card .mechanics-icon,
+.mechanics-card p:has(.twemoji):first-child {
+  margin: 0 0 0.55rem;
+  line-height: 0;
+}
+
+.mechanics-card .twemoji,
+.mechanics-card .mechanics-icon.twemoji {
+  display: inline-flex;
+  width: 1.4rem;
+  height: 1.4rem;
+  color: var(--oc-mint, #34dab7);
+}
+
+.mechanics-card .twemoji svg {
+  width: 1.4rem;
+  height: 1.4rem;
+  stroke: currentColor;
+  fill: none;
 }
 
 .mechanics-card h3 {

@@ -39,6 +39,8 @@ hide:
 
 <div class="mechanics-card" markdown>
 
+:lucide-key-round:{ .mechanics-icon }
+
 ### Your keys, your model
 
 - OpenAI, Anthropic, Gemini, DeepSeek, Mistral, OpenRouter, Ollama, or any OpenAI-compatible endpoint
@@ -48,6 +50,8 @@ hide:
 </div>
 
 <div class="mechanics-card" markdown>
+
+:lucide-languages:{ .mechanics-icon }
 
 ### Exercises & analysis
 
@@ -59,6 +63,8 @@ hide:
 
 <div class="mechanics-card" markdown>
 
+:lucide-repeat:{ .mechanics-icon }
+
 ### Spaced repetition
 
 - Weak topics and micro-learning items tracked automatically
@@ -68,6 +74,8 @@ hide:
 </div>
 
 <div class="mechanics-card" markdown>
+
+:lucide-hard-drive:{ .mechanics-icon }
 
 ### Local-first data
 
