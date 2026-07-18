@@ -5,6 +5,16 @@
   const TASK = "My friend works in a cafe";
   const ANSWER = "Mi amigo trabajo en un cafe";
   const SPIN = ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"];
+  const BAR_WIDTH = 16;
+  const LEVELS = [
+    { level: "A1", completed: 0, inProgress: 6, notStarted: 0 },
+    { level: "A2", completed: 0, inProgress: 6, notStarted: 6 },
+    { level: "B1", completed: 0, inProgress: 6, notStarted: 9 },
+    { level: "B2", completed: 0, inProgress: 0, notStarted: 13 },
+    { level: "C1", completed: 0, inProgress: 0, notStarted: 17 },
+    { level: "C2", completed: 0, inProgress: 0, notStarted: 16 },
+  ];
+  const COURSE = { completed: 0, inProgress: 18, notStarted: 61 };
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -54,6 +64,56 @@
     );
   }
 
+  function stackedBar(completed, inProgress, notStarted) {
+    const total = completed + inProgress + notStarted;
+    if (total === 0) {
+      return `<span class="t-bar t-bar--empty"></span>`;
+    }
+    const c = Math.round((completed / total) * BAR_WIDTH);
+    const ip = Math.round((inProgress / total) * BAR_WIDTH);
+    const n = Math.max(0, BAR_WIDTH - c - ip);
+    const seg = (cls, w) =>
+      w > 0 ? `<span class="t-bar__seg ${cls}" style="flex:${w}"></span>` : "";
+    return (
+      `<span class="t-bar">` +
+      seg("t-bar__done", c) +
+      seg("t-bar__ip", ip) +
+      seg("t-bar__new", n) +
+      `</span>`
+    );
+  }
+
+  function progressHtml() {
+    const rows = LEVELS.map(
+      (l) =>
+        `<div class="t-progress-row">` +
+        `<span class="t-progress-label"><span class="t-bold">${l.level}:</span> ` +
+        `<span class="t-mint">${l.completed}</span>/` +
+        `<span class="t-amber">${l.inProgress}</span>/` +
+        `<span class="t-blue">${l.notStarted}</span></span>` +
+        stackedBar(l.completed, l.inProgress, l.notStarted) +
+        `</div>`
+    ).join("");
+
+    return (
+      `<div class="t-card t-card--progress">` +
+      `<div class="t-card__title">Progress</div>` +
+      `<div class="t-card__body">` +
+      `<div class="t-progress-course">` +
+      `<span class="t-bold">Course:</span> ` +
+      `<span class="t-mint">${COURSE.completed} (completed)</span>` +
+      ` / ` +
+      `<span class="t-amber">${COURSE.inProgress} (in progress)</span>` +
+      ` / ` +
+      `<span class="t-blue">${COURSE.notStarted} (new)</span>` +
+      `</div>` +
+      `<div class="t-progress-levels">${rows}</div>` +
+      `</div>` +
+      `</div>` +
+      `<div class="t-footer">n: start next | d: docs | Esc: quit</div>`
+    );
+  }
+
   async function typeAnswer() {
     let typed = "";
     screen.innerHTML = practiceHtml(typed, true);
@@ -79,10 +139,8 @@
     }
   }
 
-  async function revealReport() {
-    const full = reportHtml();
-    // Reveal by chunks (paragraphs) for a terminal feel without char spam
-    const parts = full.split("\n");
+  async function revealLines(html) {
+    const parts = html.split("\n");
     let acc = "";
     for (let i = 0; i < parts.length; i += 1) {
       acc += (i ? "\n" : "") + parts[i];
@@ -91,9 +149,19 @@
     }
   }
 
+  async function revealReport() {
+    await revealLines(reportHtml());
+  }
+
+  async function revealProgress() {
+    // HTML structure: fade in as a block (bars need full DOM)
+    screen.innerHTML = progressHtml();
+    await sleep(200);
+  }
+
   async function runLoop() {
     if (reduceMotion) {
-      screen.innerHTML = reportHtml();
+      screen.innerHTML = progressHtml();
       return;
     }
     // eslint-disable-next-line no-constant-condition
@@ -101,6 +169,8 @@
       await typeAnswer();
       await showLoading();
       await revealReport();
+      await sleep(2500);
+      await revealProgress();
       await sleep(3200);
     }
   }

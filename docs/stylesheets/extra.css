@@ -356,9 +356,9 @@
 }
 
 .term-demo__screen {
-  height: 22rem;
-  min-height: 22rem;
-  max-height: 22rem;
+  height: 24rem;
+  min-height: 24rem;
+  max-height: 24rem;
   padding: 0.75rem 0.85rem 0.9rem;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: 0.75rem;
@@ -400,6 +400,54 @@
 .term-demo .t-dim { color: #777; }
 .term-demo .t-bold { font-weight: 700; }
 .term-demo .t-italic { font-style: italic; }
+
+.term-demo .t-progress-course {
+  margin-bottom: 0.55rem;
+  white-space: normal;
+}
+
+.term-demo .t-progress-levels {
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+}
+
+.term-demo .t-progress-row {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  white-space: nowrap;
+}
+
+.term-demo .t-progress-label {
+  flex: 0 0 6.5rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.term-demo .t-bar {
+  display: inline-flex;
+  flex: 1;
+  min-width: 0;
+  max-width: 12rem;
+  height: 0.55rem;
+  border-radius: 1px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.term-demo .t-bar--empty {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.term-demo .t-bar__seg {
+  display: block;
+  height: 100%;
+  min-width: 0;
+}
+
+.term-demo .t-bar__done { background: #34dab7; }
+.term-demo .t-bar__ip { background: #fcb05d; }
+.term-demo .t-bar__new { background: #14539d; }
 
 .term-demo .t-cursor {
   display: inline-block;
@@ -473,9 +521,13 @@
   }
 
   .term-demo__screen {
-    height: 20rem;
-    min-height: 20rem;
-    max-height: 20rem;
+    height: 22rem;
+    min-height: 22rem;
+    max-height: 22rem;
     font-size: 0.7rem;
+  }
+
+  .term-demo .t-progress-label {
+    flex-basis: 5.75rem;
   }
 }
