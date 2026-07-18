@@ -6,7 +6,7 @@ site_url = "https://scriptology.github.io/open-course-website/"
 copyright = "Copyright &copy; 2026 scriptology"
 
 extra_css = ["stylesheets/extra.css"]
-extra_javascript = ["javascripts/copy-install.js"]
+extra_javascript = ["javascripts/copy-install.js", "javascripts/terminal-demo.js"]
 
 [project.theme]
 language = "en"

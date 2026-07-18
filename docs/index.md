@@ -73,40 +73,14 @@ hide:
 
 ## How it works
 
-<div class="steps" markdown>
-
-<div class="step-card" markdown>
-
-### 1. Pick a topic
-
-Dashboard selects the next session: a new curriculum topic or a due review.
-
-</div>
-
-<div class="step-card" markdown>
-
-### 2. Generate a batch
-
-Your LLM creates translation exercises for that topic.
-
-</div>
-
-<div class="step-card" markdown>
-
-### 3. Translate
-
-Answer the batch in the terminal.
-
-</div>
-
-<div class="step-card" markdown>
-
-### 4. Score & schedule
-
-Answers are analyzed; scores update and weak spots feed later sessions.
-
-</div>
-
+<div class="term-demo" aria-label="Animated session demo">
+  <div class="term-demo__bar">
+    <span class="term-demo__dot term-demo__dot--r"></span>
+    <span class="term-demo__dot term-demo__dot--y"></span>
+    <span class="term-demo__dot term-demo__dot--g"></span>
+    <span class="term-demo__title">open-course-cli</span>
+  </div>
+  <div class="term-demo__screen" id="term-demo-screen" aria-live="polite"></div>
 </div>
 
 <div class="cta-section" markdown>

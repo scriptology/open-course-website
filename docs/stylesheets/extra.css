@@ -296,40 +296,96 @@
   margin-bottom: 0;
 }
 
-.steps {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  margin-top: 0.75rem;
+/* Animated terminal demo */
+.term-demo {
+  margin: 0.75rem 0 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #1a1a1a;
+  overflow: hidden;
+  box-shadow: none;
 }
 
-.step-card {
-  padding: 0.95rem 1rem;
-  border-radius: 0.45rem;
-  background: #3a3a3a;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
-  border-width: 1px !important;
-  box-shadow: none !important;
-  outline: none;
+.term-demo__bar {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 0.7rem;
+  background: #222;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.step-card h3 {
-  margin-top: 0;
-  margin-bottom: 0.4rem;
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: #ffffff;
-  border: none !important;
-  box-shadow: none !important;
+.term-demo__dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  flex-shrink: 0;
 }
 
-.step-card p {
-  font-size: 0.85rem;
-  margin-bottom: 0;
+.term-demo__dot--r { background: #ff5f57; }
+.term-demo__dot--y { background: #febc2e; }
+.term-demo__dot--g { background: #28c840; }
+
+.term-demo__title {
+  margin-left: 0.4rem;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.45);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
-.step-card p:last-child {
-  margin-bottom: 0;
+.term-demo__screen {
+  min-height: 15.5rem;
+  padding: 0.75rem 0.85rem 0.9rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: #e8e8e8;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.term-demo .t-card {
+  border: 1px solid #555;
+  border-radius: 0.2rem;
+  padding: 0.35rem 0.5rem 0.45rem;
+  margin-bottom: 0.55rem;
+}
+
+.term-demo .t-card__title {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.68rem;
+  margin-bottom: 0.25rem;
+}
+
+.term-demo .t-card__body {
+  color: #fff;
+}
+
+.term-demo .t-footer {
+  color: #777;
+  margin-top: 0.45rem;
+  font-size: 0.68rem;
+}
+
+.term-demo .t-mint { color: #34dab7; }
+.term-demo .t-blue { color: #4a8fd4; }
+.term-demo .t-amber { color: #fcb05d; }
+.term-demo .t-red { color: #f07178; }
+.term-demo .t-dim { color: #777; }
+.term-demo .t-bold { font-weight: 700; }
+.term-demo .t-italic { font-style: italic; }
+
+.term-demo .t-cursor {
+  display: inline-block;
+  width: 0.5ch;
+  margin-left: 1px;
+  background: #34dab7;
+  color: transparent;
+  animation: t-blink 1s step-end infinite;
+}
+
+@keyframes t-blink {
+  50% { opacity: 0; }
 }
 
 .cta-section {
@@ -378,8 +434,7 @@
     gap: 0.55em;
   }
 
-  .mechanics,
-  .steps {
+  .mechanics {
     grid-template-columns: 1fr;
   }
 
@@ -389,5 +444,10 @@
 
   .hero-install code {
     font-size: 0.75rem;
+  }
+
+  .term-demo__screen {
+    min-height: 14rem;
+    font-size: 0.7rem;
   }
 }
