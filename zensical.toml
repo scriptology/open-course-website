@@ -11,7 +11,7 @@ extra_javascript = ["javascripts/copy-install.js", "javascripts/terminal-demo.js
 [project.theme]
 language = "en"
 logo = "assets/logo.svg"
-favicon = "assets/logo.svg"
+favicon = "assets/favicon.ico"
 custom_dir = "overrides"
 
 features = [
