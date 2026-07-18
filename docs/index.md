@@ -7,7 +7,7 @@ hide:
 
 <div class="hero" markdown>
 
-<h1 class="hero-logo"><span class="hero-logo-text"><span class="glyph">&gt;_</span>OPEN COURSE</span></h1>
+<h1 class="hero-logo"><span class="hero-logo-text">:lucide-languages:{ .hero-logo-icon } OPEN COURSE</span></h1>
 
 <p class="hero-lead">Learn languages in the terminal with a tutor that adapts to you. Practice in short sessions, get clear feedback on mistakes, and keep improving where you are weakest.</p>
 

@@ -103,8 +103,8 @@
 
 .hero-logo-text {
   display: inline-flex;
-  align-items: baseline;
-  gap: 0.7em;
+  align-items: center;
+  gap: 0.55em;
   font-size: 1.45rem;
   line-height: 1.2;
   color: #ffffff;
@@ -114,11 +114,21 @@
   text-shadow: 0.35px 0 0 currentColor, -0.35px 0 0 currentColor;
 }
 
-.hero-logo-text .glyph {
-  color: var(--oc-mint, #34dab7);
-  margin-right: 0;
+.hero-logo-text .hero-logo-icon,
+.hero-logo-text .twemoji {
+  display: inline-flex;
+  width: 1.15em;
+  height: 1.15em;
   flex-shrink: 0;
-  -webkit-text-stroke-color: var(--oc-mint, #34dab7);
+  color: var(--oc-mint, #34dab7);
+}
+
+.hero-logo-text .hero-logo-icon svg,
+.hero-logo-text .twemoji svg {
+  width: 100%;
+  height: 100%;
+  stroke: currentColor;
+  fill: none;
 }
 
 .hero p,
