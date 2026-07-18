@@ -123,12 +123,12 @@
 
 .hero p,
 .hero-lead {
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   font-weight: 300;
-  line-height: 1.6;
+  line-height: 1.65;
   color: var(--md-default-fg-color--light);
-  max-width: 34rem;
-  margin: 0 auto 0.25rem;
+  max-width: 38rem;
+  margin: 0 auto 0.3rem;
 }
 
 .hero-lead {
@@ -145,7 +145,7 @@
 .hero-install {
   position: relative;
   width: 100%;
-  max-width: 22rem;
+  max-width: 30rem;
   margin: 0.85rem auto 0.65rem;
   text-align: left;
   border-radius: 0.4rem;
@@ -513,6 +513,11 @@
   }
 
   .hero-install {
+    max-width: 100%;
+  }
+
+  .hero p,
+  .hero-lead {
     max-width: 100%;
   }
 
