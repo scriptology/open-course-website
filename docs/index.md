@@ -57,7 +57,7 @@ hide:
 
 - Translation batches generated for the current topic and CEFR level
 - LLM scores answers and surfaces mistakes after each batch
-- Lessons and topic docs available when you need explanation
+- Plan grows from your errors: new topics are added to lock in weak spots
 
 </div>
 
