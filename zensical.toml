@@ -1,6 +1,6 @@
 [project]
 site_name = "Open Course CLI"
-site_description = "Terminal AI tutor for language learning. Bring your own API key or Ollama. Exercises, lessons, and analysis via the provider you choose."
+site_description = "A terminal AI tutor that builds your language course from your own mistakes. Bring your API key or Ollama and learn at your own pace."
 site_author = "scriptology"
 site_url = "https://scriptology.github.io/open-course-website/"
 copyright = "Copyright &copy; 2026 scriptology"

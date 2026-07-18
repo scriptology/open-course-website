@@ -1,5 +1,5 @@
 ---
-description: Terminal AI tutor for language learning. Bring your own API key or Ollama. Exercises, lessons, and analysis via the provider you choose.
+description: A terminal AI tutor that builds your language course from your own mistakes. Bring your API key or Ollama and learn at your own pace.
 hide:
   - navigation
   - toc
@@ -9,7 +9,7 @@ hide:
 
 <h1 class="hero-logo"><span class="hero-logo-text">:lucide-languages:{ .hero-logo-icon } OPEN COURSE</span></h1>
 
-<p class="hero-lead">Learn languages in the terminal with a tutor that adapts to you. Practice in short sessions, get clear feedback on mistakes, and keep improving where you are weakest.</p>
+<p class="hero-lead">A terminal AI tutor that builds your language course from your own mistakes. Bring your API key or Ollama, and the app shapes exercises, feedback, and reviews around where you actually struggle.</p>
 
 <div class="hero-install">
   <div class="hero-install-inner">
