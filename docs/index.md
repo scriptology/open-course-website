@@ -25,6 +25,18 @@ hide:
 
 </div>
 
+## How it works
+
+<div class="term-demo" aria-label="Animated session demo">
+  <div class="term-demo__bar">
+    <span class="term-demo__dot term-demo__dot--r"></span>
+    <span class="term-demo__dot term-demo__dot--y"></span>
+    <span class="term-demo__dot term-demo__dot--g"></span>
+    <span class="term-demo__title">open-course-cli</span>
+  </div>
+  <div class="term-demo__screen" id="term-demo-screen" aria-live="polite"></div>
+</div>
+
 ## Features
 
 <div class="mechanics" markdown>
@@ -69,18 +81,6 @@ hide:
 
 </div>
 
-</div>
-
-## How it works
-
-<div class="term-demo" aria-label="Animated session demo">
-  <div class="term-demo__bar">
-    <span class="term-demo__dot term-demo__dot--r"></span>
-    <span class="term-demo__dot term-demo__dot--y"></span>
-    <span class="term-demo__dot term-demo__dot--g"></span>
-    <span class="term-demo__title">open-course-cli</span>
-  </div>
-  <div class="term-demo__screen" id="term-demo-screen" aria-live="polite"></div>
 </div>
 
 <div class="cta-section" markdown>
