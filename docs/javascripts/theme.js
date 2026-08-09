@@ -62,7 +62,8 @@
     media.addEventListener("change", syncLabel);
 
     syncLabel();
-    document.body.appendChild(button);
+    const topbar = document.querySelector(".lp-topbar");
+    (topbar || document.body).appendChild(button);
   }
 
   apply();
