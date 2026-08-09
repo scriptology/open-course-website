@@ -303,10 +303,11 @@ body::after {
   margin: 0;
 }
 
-/* Top bar: wordmark left, fixed theme toggle completes it on the right */
+/* Top bar: wordmark left, theme toggle icon right, same line */
 .lp-topbar {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 1.25rem 0 0;
 }
 
@@ -868,31 +869,23 @@ body::after {
   justify-content: center;
 }
 
-/* Theme toggle: quiet square icon button (created by javascripts/theme.js) */
+/* Theme toggle: bare icon in the top bar (created by javascripts/theme.js) */
 .theme-toggle {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  z-index: 110;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
   padding: 0;
-  border: 1px solid color-mix(in srgb, var(--oc-border) 75%, transparent);
-  border-radius: var(--oc-radius-m);
-  background: var(--oc-surface);
+  border: none;
+  background: transparent;
   color: var(--oc-text-muted);
   cursor: pointer;
-  transition:
-    color var(--oc-dur-fast) var(--oc-ease),
-    border-color var(--oc-dur-fast) var(--oc-ease);
+  transition: color var(--oc-dur-fast) var(--oc-ease);
 }
 
 .theme-toggle:hover {
   color: var(--oc-text);
-  border-color: var(--oc-text-muted);
 }
 
 .theme-toggle:focus-visible {
