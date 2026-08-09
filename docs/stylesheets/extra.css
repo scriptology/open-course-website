@@ -320,6 +320,8 @@ body::after {
   display: none;
   height: 1.25rem;
   width: auto;
+  /* Optical alignment: the glyph sits high in its viewBox */
+  margin-top: 5px;
 }
 
 :root[data-theme="light"] .lp-logo--black {
@@ -615,6 +617,10 @@ body::after {
 }
 
 /* Two ways */
+.lp section.lp-ways {
+  padding-top: 2.5rem;
+}
+
 .lp-ways__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -851,10 +857,17 @@ body::after {
   color: var(--oc-text);
 }
 
+.lp-providers__note {
+  margin: 1.5rem 0 0;
+  font-size: 0.9rem;
+  color: var(--oc-text-muted);
+}
+
 /* Final CTA: mini minimalist */
-.lp-final {
+.lp section.lp-final {
   text-align: center;
-  padding-bottom: 4rem;
+  padding-top: 2.5rem;
+  padding-bottom: 6.5rem;
 }
 
 .lp-final .lp-h2 {
