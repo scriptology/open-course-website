@@ -1,5 +1,5 @@
 ---
-description: A terminal AI tutor that builds your language course from your own mistakes. Bring your API key or Ollama and learn at your own pace.
+description: An AI tutor for language learning. Practice in your browser or in your terminal — your progress stays in sync.
 hide:
   - navigation
   - toc
@@ -7,9 +7,21 @@ hide:
 
 <div class="hero" markdown>
 
-<h1 class="hero-logo"><span class="hero-logo-text"><svg class="hero-logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg> OPEN COURSE</span></h1>
+<h1 class="hero-logo">
+  <img class="hero-logo-img hero-logo-img--black" src="assets/logo-black.svg" alt="Open Course" />
+  <img class="hero-logo-img hero-logo-img--white" src="assets/logo-white.svg" alt="Open Course" />
+</h1>
 
-<p class="hero-lead">A terminal AI tutor that builds your language course from your own mistakes. Bring your API key or Ollama, and the app shapes exercises, feedback, and reviews around where you actually struggle.</p>
+<p class="hero-lead">An AI tutor that builds your language course from your own mistakes. Every exercise, every review — shaped by where you actually struggle.</p>
+
+<div class="hero-cta" markdown>
+
+[Open web app](https://app.open-course.eu){ .md-button .md-button--primary }
+[:fontawesome-brands-github: GitHub](https://github.com/scriptology/open-course-cli){ .md-button }
+
+</div>
+
+<p class="hero-install-caption">Prefer the terminal? One command to install:</p>
 
 <div class="hero-install">
   <div class="hero-install-inner">
@@ -20,8 +32,6 @@ hide:
     </button>
   </div>
 </div>
-
-[:fontawesome-brands-github: GitHub](https://github.com/scriptology/open-course-cli){ .md-button .md-button--primary }
 
 </div>
 
@@ -35,29 +45,51 @@ hide:
   <div class="term-demo__screen" id="term-demo-screen" aria-live="polite"></div>
 </div>
 
+## Two ways to learn
+
 <div class="mechanics" markdown>
 
 <div class="mechanics-card" markdown>
 
-:lucide-key-round:{ .mechanics-icon }
+:lucide-globe:{ .mechanics-icon }
 
-### Your keys, your model
+### Web app
 
-- OpenAI, Anthropic, Gemini, DeepSeek, Mistral, OpenRouter, Ollama, or any OpenAI-compatible endpoint
-- API keys stay on your machine. No hosted account required.
-- Pick provider, base URL, and model during onboarding
+- Practice right in the browser at [app.open-course.eu](https://app.open-course.eu)
+- Dashboard with CEFR progress, weak topics, and activity history
+- Cloud account — nothing to install
 
 </div>
 
 <div class="mechanics-card" markdown>
 
-:lucide-languages:{ .mechanics-icon }
+:lucide-terminal:{ .mechanics-icon }
 
-### Exercises & analysis
+### CLI
 
-- Translation batches generated for the current topic and CEFR level
-- LLM scores answers and surfaces mistakes after each batch
-- Plan grows from your errors: new topics are added to lock in weak spots
+- Terminal-first practice, keyboard-driven
+- Local-first data; offline except LLM calls
+- Bring your own API key or run fully local Ollama
+
+</div>
+
+</div>
+
+<p class="ways-note" markdown>:lucide-refresh-cw: They sync. Pair the CLI with your account using a device code — one progress, everywhere.</p>
+
+## Built around how you learn
+
+<div class="mechanics" markdown>
+
+<div class="mechanics-card" markdown>
+
+:lucide-sparkles:{ .mechanics-icon }
+
+### AI exercises & feedback
+
+- Translation batches generated for your topic and CEFR level
+- The model scores every answer and explains each mistake
+- Your plan grows from your errors, not a fixed textbook
 
 </div>
 
@@ -68,20 +100,32 @@ hide:
 ### Spaced repetition
 
 - Weak topics and micro-learning items tracked automatically
-- Next session balances new curriculum material with due reviews
+- Each session balances new material with due reviews
 - Progress and history kept per language pair
 
 </div>
 
 <div class="mechanics-card" markdown>
 
-:lucide-hard-drive:{ .mechanics-icon }
+:lucide-cloud:{ .mechanics-icon }
 
-### Local-first data
+### Cloud sync
 
-- Curriculum, progress, and history stored on disk
-- Isolated data per language pair; provider settings are global
-- Works offline for everything except LLM calls
+- One account across the web app and the CLI
+- Device pairing with a short code — no passwords in the terminal
+- Start on your laptop, continue in the browser
+
+</div>
+
+<div class="mechanics-card" markdown>
+
+:lucide-key-round:{ .mechanics-icon }
+
+### Your keys, your model
+
+- OpenAI, Anthropic, Gemini, DeepSeek, Mistral, OpenRouter, Ollama
+- Pick provider, base URL, and model during onboarding
+- No subscription — you pay your provider directly
 
 </div>
 
@@ -89,10 +133,11 @@ hide:
 
 <div class="cta-section" markdown>
 
-## Bring your own model
+## Start learning
 
-No subscription. Configure a provider once. Practice with your API key or fully local Ollama.
+Pick your platform — your progress follows you.
 
-[:fontawesome-brands-github: View on GitHub](https://github.com/scriptology/open-course-cli){ .md-button .md-button--primary }
+[Open web app](https://app.open-course.eu){ .md-button .md-button--primary }
+[:fontawesome-brands-github: View on GitHub](https://github.com/scriptology/open-course-cli){ .md-button }
 
 </div>

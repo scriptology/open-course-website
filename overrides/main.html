@@ -2,6 +2,25 @@
 <title>{{ config.site_name }}</title>
 {% endblock %} {% block extrahead %} {{ super() }}
 
+<script>
+  /* Set data-theme before first paint to avoid a theme flash. Kept in sync
+     with docs/javascripts/theme.js. */
+  (function () {
+    var choice = "system";
+    try {
+      var raw = window.localStorage.getItem("oc-theme");
+      if (raw === "light" || raw === "dark" || raw === "system") choice = raw;
+    } catch (e) {}
+    var resolved = choice;
+    if (choice === "system") {
+      resolved = window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light";
+    }
+    document.documentElement.setAttribute("data-theme", resolved);
+  })();
+</script>
+
 <link
     rel="icon"
     href="{{ config.site_url ~ 'assets/favicon.ico' }}"
