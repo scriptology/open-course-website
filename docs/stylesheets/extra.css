@@ -5,25 +5,25 @@
 
 @font-face {
   font-family: "Playfair Display";
-  src: url("../assets/fonts/PlayfairDisplay-600.woff2") format("woff2");
-  font-weight: 600;
+  src: url("../assets/fonts/PlayfairDisplay-400.woff2") format("woff2");
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: "Playfair Display";
-  src: url("../assets/fonts/PlayfairDisplay-600-italic.woff2") format("woff2");
-  font-weight: 600;
+  src: url("../assets/fonts/PlayfairDisplay-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Playfair Display";
+  src: url("../assets/fonts/PlayfairDisplay-500-italic.woff2") format("woff2");
+  font-weight: 500;
   font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Playfair Display";
-  src: url("../assets/fonts/PlayfairDisplay-700.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
   font-display: swap;
 }
 
@@ -82,8 +82,9 @@
 
   --oc-focus: #2e6b4e;
 
-  --oc-shadow-m: 0 1px 2px rgb(26 26 23 / 0.05);
-  --oc-shadow-l: 0 16px 40px -16px rgb(26 26 23 / 0.14);
+  /* Typographic design: flat surfaces, no shadows */
+  --oc-shadow-m: none;
+  --oc-shadow-l: none;
 
   --oc-term-bg: #ffffff;
   --oc-term-bar: #f1f1ed;
@@ -110,8 +111,9 @@
 
   --oc-focus: #7cc79a;
 
-  --oc-shadow-m: 0 1px 2px rgb(0 0 0 / 0.5);
-  --oc-shadow-l: 0 16px 40px -16px rgb(0 0 0 / 0.65);
+  /* Typographic design: flat surfaces, no shadows */
+  --oc-shadow-m: none;
+  --oc-shadow-l: none;
 
   --oc-term-bg: #131311;
   --oc-term-bar: #1a1a17;
@@ -169,11 +171,11 @@
   --oc-font-display: "Playfair Display", Georgia, "Times New Roman", serif;
   --oc-font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  /* Typographic design: no rounded corners */
-  --oc-radius-s: 0;
-  --oc-radius-m: 0;
-  --oc-radius-l: 0;
-  --oc-radius-card: 0;
+  /* Typographic design: only a hair of rounding, circles stay round */
+  --oc-radius-s: 2px;
+  --oc-radius-m: 3px;
+  --oc-radius-l: 4px;
+  --oc-radius-card: 4px;
 
   --oc-ease: cubic-bezier(0.16, 1, 0.3, 1);
   --oc-dur-fast: 200ms;
@@ -272,17 +274,17 @@ body::after {
 }
 
 .lp-h1 {
-  margin: 1.5rem 0 1.25rem;
-  font-size: clamp(2.75rem, 6vw, 4.25rem);
-  font-weight: 600;
+  margin: 1.25rem 0 1.25rem;
+  font-size: clamp(2.5rem, 5.5vw, 3.75rem);
+  font-weight: 500;
   letter-spacing: -0.01em;
-  line-height: 1.08;
+  line-height: 1.1;
 }
 
 .lp-h2 {
   margin: 0 0 0.75rem;
   font-size: clamp(1.6rem, 3vw, 2.1rem);
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: -0.01em;
   line-height: 1.2;
 }
@@ -321,7 +323,7 @@ body::after {
 
 .md-typeset .lp-logo {
   display: none;
-  height: 1.6rem;
+  height: 1.15rem;
   width: auto;
 }
 
@@ -351,7 +353,7 @@ body::after {
   gap: 0.5rem;
   min-height: 2.75rem;
   padding: 0.7rem 1.5rem;
-  border-radius: 0;
+  border-radius: var(--oc-radius-m);
   font-family: var(--oc-font-sans);
   font-size: 0.95rem;
   font-weight: 500;
@@ -421,9 +423,8 @@ body::after {
   margin: 0;
   padding: 6px;
   border: 1px solid color-mix(in srgb, var(--oc-border) 55%, transparent);
-  border-radius: 0;
+  border-radius: var(--oc-radius-card);
   background: var(--oc-surface);
-  box-shadow: var(--oc-shadow-m);
 }
 
 .lp-frame--term {
@@ -440,7 +441,7 @@ body::after {
 .lp-frame__dot {
   width: 0.5rem;
   height: 0.5rem;
-  border-radius: 0;
+  border-radius: 50%;
   border: 1px solid var(--oc-text-muted);
   opacity: 0.5;
 }
@@ -486,7 +487,7 @@ body::after {
 .term-demo__dot {
   width: 0.5rem;
   height: 0.5rem;
-  border-radius: 0;
+  border-radius: 50%;
   flex-shrink: 0;
 }
 
@@ -622,9 +623,8 @@ body::after {
   min-width: 0;
   padding: 1.75rem;
   border: 1px solid color-mix(in srgb, var(--oc-border) 55%, transparent);
-  border-radius: 0;
+  border-radius: var(--oc-radius-card);
   background: var(--oc-surface);
-  box-shadow: var(--oc-shadow-m);
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
@@ -634,7 +634,7 @@ body::after {
 .lp-bcell h3 {
   margin: 0;
   font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: -0.01em;
 }
 
@@ -713,7 +713,7 @@ body::after {
   margin: 0;
   padding: 0;
   border: none;
-  border-radius: 0;
+  border-radius: var(--oc-radius-m);
   background: transparent;
   color: var(--oc-brand);
   cursor: pointer;
@@ -758,9 +758,8 @@ body::after {
 .lp-bcell {
   padding: 1.6rem;
   border: 1px solid color-mix(in srgb, var(--oc-border) 55%, transparent);
-  border-radius: 0;
+  border-radius: var(--oc-radius-card);
   background: var(--oc-surface);
-  box-shadow: var(--oc-shadow-m);
   display: flex;
   flex-direction: column;
   gap: 0.55rem;
@@ -796,6 +795,7 @@ body::after {
   font-family: var(--oc-font-mono);
   font-size: 0.72rem;
   padding: 0.2rem 0.5rem;
+  border-radius: var(--oc-radius-s);
   border: 1px solid color-mix(in srgb, var(--oc-border) 75%, transparent);
   color: var(--oc-text-muted);
 }
@@ -814,7 +814,7 @@ body::after {
 .md-typeset .lp-providers__title {
   margin: 0 0 2rem;
   font-size: 1.15rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: -0.01em;
   color: var(--oc-text-muted);
 }
@@ -878,9 +878,8 @@ body::after {
   height: 2rem;
   padding: 0;
   border: 1px solid color-mix(in srgb, var(--oc-border) 75%, transparent);
-  border-radius: 0;
+  border-radius: var(--oc-radius-m);
   background: var(--oc-surface);
-  box-shadow: var(--oc-shadow-m);
   color: var(--oc-text-muted);
   cursor: pointer;
   transition:
