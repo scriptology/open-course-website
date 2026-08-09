@@ -259,7 +259,7 @@ body::after {
 /* ------------------------------------------------------------------ */
 
 .lp section {
-  padding: 5.5rem 0 0;
+  padding: 4rem 0 0;
 }
 
 .md-typeset .lp-h1,
@@ -274,7 +274,7 @@ body::after {
 }
 
 .lp-h1 {
-  margin: 1.25rem 0 1.25rem;
+  margin: 0 0 0.75rem;
   font-size: clamp(2.5rem, 5.5vw, 3.75rem);
   font-weight: 500;
   letter-spacing: -0.01em;
@@ -303,27 +303,21 @@ body::after {
   margin: 0;
 }
 
-.lp-eyebrow {
-  margin: 0 0 0.75rem;
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--oc-text-muted);
+/* Top bar: wordmark left, fixed theme toggle completes it on the right */
+.lp-topbar {
+  display: flex;
+  align-items: center;
+  padding: 1.25rem 0 0;
 }
 
-/* Hero: off-center, left-aligned statement */
-.lp-hero {
-  padding: 4rem 0 0;
-  min-height: min(60vh, 30rem);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.lp-topbar__home {
+  display: inline-flex;
+  align-items: center;
 }
 
 .md-typeset .lp-logo {
   display: none;
-  height: 1.15rem;
+  height: 1.25rem;
   width: auto;
 }
 
@@ -333,6 +327,15 @@ body::after {
 
 :root[data-theme="dark"] .lp-logo--white {
   display: inline-block;
+}
+
+/* Hero: off-center, left-aligned statement */
+.lp-hero {
+  padding: 2.5rem 0 0;
+  min-height: min(52vh, 26rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* Buttons: sharp rectangles, consistent size */
@@ -954,7 +957,7 @@ body::after {
 
   .lp-hero {
     min-height: auto;
-    padding: 3rem 0 0;
+    padding: 2rem 0 0;
   }
 
   .lp-h1 {
