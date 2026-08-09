@@ -18,6 +18,8 @@
         : "light";
     }
     document.documentElement.setAttribute("data-theme", resolved);
+    document.documentElement.classList.remove("no-js");
+    document.documentElement.classList.add("js");
   })();
 </script>
 
@@ -37,7 +39,7 @@
 page.meta.description if page and page.meta and page.meta.description else
 config.site_description %} {% set og_url = page.canonical_url if page and
 page.canonical_url else config.site_url %} {% set og_image = config.site_url ~
-"assets/og-2.png" %}
+"assets/og.png" %}
 
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="{{ config.site_name }}" />

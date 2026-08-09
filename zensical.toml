@@ -1,13 +1,14 @@
 [project]
 site_name = "Open Course"
-site_description = "An AI tutor for language learning. Practice in your browser or in your terminal — your progress stays in sync."
+site_description = "An AI tutor for language learning. Practice in the browser or in the terminal. Your progress stays in sync."
 site_author = "scriptology"
-site_url = "https://scriptology.github.io/open-course-website/"
+site_url = "https://open-course.eu/"
 copyright = "Copyright &copy; 2026 scriptology"
 
 extra_css = ["stylesheets/extra.css"]
 extra_javascript = [
   "javascripts/theme.js",
+  "javascripts/reveal.js",
   "javascripts/copy-install.js",
   "javascripts/terminal-demo.js",
 ]
@@ -17,6 +18,7 @@ language = "en"
 logo = "assets/logo-mini-white.svg"
 favicon = "assets/favicon.ico"
 custom_dir = "overrides"
+font = false
 
 features = [
   "content.code.copy",

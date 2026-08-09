@@ -1,0 +1,127 @@
+{% extends "main.html" %} {% block content %}
+<div class="lp">
+
+  <section class="lp-hero">
+    <div data-reveal>
+      <img class="lp-logo lp-logo--black" src="assets/logo-black.svg" alt="Open Course" />
+      <img class="lp-logo lp-logo--white" src="assets/logo-white.svg" alt="Open Course" />
+    </div>
+    <h1 class="lp-h1" data-reveal>A course that learns<br />from your <span class="lp-accent">mistakes.</span></h1>
+    <p class="lp-sub" data-reveal>An AI tutor that builds your language course from your own mistakes, in the browser or in your terminal.</p>
+    <div class="lp-cta-row" data-reveal>
+      <a class="lp-btn lp-btn--primary" href="https://app.open-course.eu">
+        <span>Open web app</span>
+        <span class="lp-btn__orb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
+      </a>
+      <a class="lp-btn lp-btn--ghost" href="#cli"><span>Get the CLI</span></a>
+    </div>
+  </section>
+
+  <section class="lp-proof">
+    <div class="lp-proof__head" data-reveal>
+      <h2 class="lp-h2">See every mistake become the next exercise</h2>
+      <p class="lp-section-sub">Real screens, real session. The web app tracks your CEFR progress while the CLI drills translations and explains each slip.</p>
+    </div>
+    <div class="lp-proof__grid">
+      <figure class="lp-frame lp-frame--browser" data-reveal>
+        <div class="lp-frame__bar">
+          <span class="lp-frame__dot"></span><span class="lp-frame__dot"></span><span class="lp-frame__dot"></span>
+          <span class="lp-frame__url">app.open-course.eu</span>
+        </div>
+        <img class="lp-shot lp-shot--light" src="assets/app-dashboard-light.png" alt="Open Course web app dashboard with CEFR progress and activity history" loading="lazy" />
+        <img class="lp-shot lp-shot--dark" src="assets/app-dashboard-dark.png" alt="Open Course web app dashboard with CEFR progress and activity history" loading="lazy" />
+      </figure>
+      <div class="lp-frame lp-frame--term" data-reveal>
+        <div class="term-demo" aria-label="Animated session demo">
+          <div class="term-demo__bar">
+            <span class="term-demo__dot term-demo__dot--r"></span>
+            <span class="term-demo__dot term-demo__dot--y"></span>
+            <span class="term-demo__dot term-demo__dot--g"></span>
+            <span class="term-demo__title">open-course-cli</span>
+          </div>
+          <div class="term-demo__screen" id="term-demo-screen" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lp-ways" id="cli">
+    <h2 class="lp-h2" data-reveal>Two ways in, one progress</h2>
+    <div class="lp-ways__grid">
+      <article class="lp-card" data-reveal>
+        <h3>Web app</h3>
+        <p>Open app.open-course.eu and practice in the browser. Dashboard, CEFR progress, and activity history. Nothing to install.</p>
+        <a class="lp-link" href="https://app.open-course.eu">Open app.open-course.eu</a>
+      </article>
+      <article class="lp-card" data-reveal>
+        <h3>CLI</h3>
+        <p>Terminal-first and local-first. Bring your own API key, or run fully local models with Ollama.</p>
+        <div class="hero-install">
+          <div class="hero-install-inner">
+            <code id="install-cmd">curl --proto '=https' --tlsv1.2 -LsSf https://github.com/scriptology/open-course-cli/releases/latest/download/opencourse-installer.sh | sh</code>
+            <button type="button" class="hero-install-copy" aria-label="Copy install command" data-copy="curl --proto '=https' --tlsv1.2 -LsSf https://github.com/scriptology/open-course-cli/releases/latest/download/opencourse-installer.sh | sh">
+              <svg class="icon-copy" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="icon-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+        </div>
+      </article>
+    </div>
+    <p class="lp-syncnote" data-reveal>They sync. Pair the CLI with your account using a short device code, and your progress follows you.</p>
+  </section>
+
+  <section class="lp-bento">
+    <p class="lp-eyebrow" data-reveal>What you get</p>
+    <h2 class="lp-h2" data-reveal>Built around how you learn</h2>
+    <div class="lp-bento__grid">
+      <article class="lp-bcell lp-bcell--accent lp-bcell--span7" data-reveal>
+        <h3>Feedback, not just grades</h3>
+        <p>Every answer is scored by the model. Every mistake gets an explanation, a correction, and a place in your review queue.</p>
+      </article>
+      <article class="lp-bcell lp-bcell--span5" data-reveal>
+        <h3>Spaced repetition</h3>
+        <p>Weak topics come back at the right time. Each session balances new material with reviews that are due.</p>
+      </article>
+      <article class="lp-bcell lp-bcell--span4" data-reveal>
+        <h3>Cloud sync</h3>
+        <p>Start on your laptop, continue in the browser. One account across the web app and the CLI.</p>
+      </article>
+      <article class="lp-bcell lp-bcell--mono lp-bcell--span4" data-reveal>
+        <h3>CEFR curriculum</h3>
+        <p>A topic map from A1 to C2, tracked per language pair.</p>
+        <p class="lp-cefr" aria-hidden="true"><span>A1</span><span>A2</span><span class="is-now">B1</span><span>B2</span><span>C1</span><span>C2</span></p>
+      </article>
+      <article class="lp-bcell lp-bcell--span4" data-reveal>
+        <h3>Your keys, your model</h3>
+        <p>You pay your provider, not us. No subscription, no lock-in.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="lp-providers" data-reveal>
+    <h2 class="lp-providers__title">Bring your own model</h2>
+    <div class="lp-providers__row">
+      <span class="lp-provider" role="img" aria-label="OpenAI">{% include "partials/logos/openai.svg" %}</span>
+      <span class="lp-provider" role="img" aria-label="Anthropic">{% include "partials/logos/anthropic.svg" %}</span>
+      <span class="lp-provider" role="img" aria-label="Google Gemini">{% include "partials/logos/googlegemini.svg" %}</span>
+      <span class="lp-provider" role="img" aria-label="Mistral AI">{% include "partials/logos/mistralai.svg" %}</span>
+      <span class="lp-provider" role="img" aria-label="DeepSeek">{% include "partials/logos/deepseek.svg" %}</span>
+      <span class="lp-provider" role="img" aria-label="OpenRouter">{% include "partials/logos/openrouter.svg" %}</span>
+      <span class="lp-provider" role="img" aria-label="Ollama">{% include "partials/logos/ollama.svg" %}</span>
+    </div>
+  </section>
+
+  <section class="lp-final" data-reveal>
+    <h2 class="lp-h2">Start learning.</h2>
+    <p class="lp-section-sub">Free and open source. Your keys, your data.</p>
+    <div class="lp-cta-row lp-cta-row--center">
+      <a class="lp-btn lp-btn--primary" href="https://app.open-course.eu">
+        <span>Open web app</span>
+        <span class="lp-btn__orb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
+      </a>
+      <a class="lp-btn lp-btn--ghost" href="https://github.com/scriptology/open-course-cli"><span>View on GitHub</span></a>
+    </div>
+  </section>
+
+</div>
+{% endblock %}
