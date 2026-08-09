@@ -1,11 +1,14 @@
 {% extends "main.html" %} {% block content %}
 <div class="lp">
 
-  <section class="lp-hero">
-    <div data-reveal>
+  <header class="lp-topbar">
+    <a class="lp-topbar__home" href="https://open-course.eu/" aria-label="Open Course home">
       <img class="lp-logo lp-logo--black" src="assets/logo-black.svg" alt="Open Course" />
       <img class="lp-logo lp-logo--white" src="assets/logo-white.svg" alt="Open Course" />
-    </div>
+    </a>
+  </header>
+
+  <section class="lp-hero">
     <h1 class="lp-h1" data-reveal>A course that learns<br />from your <span class="lp-accent">mistakes.</span></h1>
     <p class="lp-sub" data-reveal>An AI tutor that builds your language course from your own mistakes, in the browser or in your terminal.</p>
     <div class="lp-cta-row" data-reveal>
@@ -71,7 +74,6 @@
   </section>
 
   <section class="lp-bento">
-    <p class="lp-eyebrow" data-reveal>What you get</p>
     <h2 class="lp-h2" data-reveal>Built around how you learn</h2>
     <div class="lp-bento__grid">
       <article class="lp-bcell lp-bcell--accent lp-bcell--span7" data-reveal>
