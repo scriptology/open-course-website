@@ -9,6 +9,7 @@ extra_css = ["stylesheets/extra.css"]
 extra_javascript = [
   "javascripts/theme.js",
   "javascripts/copy-install.js",
+  "javascripts/activity-dots.js",
   "javascripts/terminal-demo.js",
 ]
 
