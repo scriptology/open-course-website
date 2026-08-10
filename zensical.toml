@@ -8,7 +8,6 @@ copyright = "Copyright &copy; 2026 scriptology"
 extra_css = ["stylesheets/extra.css"]
 extra_javascript = [
   "javascripts/theme.js",
-  "javascripts/reveal.js",
   "javascripts/copy-install.js",
   "javascripts/terminal-demo.js",
 ]

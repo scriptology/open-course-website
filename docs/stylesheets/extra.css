@@ -69,6 +69,11 @@
   --oc-warning: #b07820;
   --oc-danger: #c25a4a;
 
+  /* Progress demo semantics: done / in-progress / new */
+  --oc-progress-done: #00a544;
+  --oc-progress-active: #3080ff;
+  --oc-progress-new: color-mix(in srgb, var(--oc-text) 12%, transparent);
+
   --oc-focus: #c094e4;
 
   /* Flat surfaces, no shadows */
@@ -110,6 +115,11 @@
   --oc-success: #7cc79a;
   --oc-warning: #d9a94e;
   --oc-danger: #e08a7d;
+
+  /* Progress demo semantics: done / in-progress / new */
+  --oc-progress-done: #05df72;
+  --oc-progress-active: #54a2ff;
+  --oc-progress-new: color-mix(in srgb, var(--oc-text) 14%, transparent);
 
   --oc-focus: #cfa9f0;
 
@@ -192,10 +202,12 @@
   --oc-green-500: #00c758;
   --oc-green-600: #00a544;
   --oc-green-900: #0d542b;
+  --oc-blue-300: #90c5ff;
+  --oc-blue-400: #54a2ff;
+  --oc-blue-500: #3080ff;
 
   --oc-ease: cubic-bezier(0.16, 1, 0.3, 1);
   --oc-dur-fast: 200ms;
-  --oc-dur-reveal: 750ms;
 
   --md-typeset-font-size: 0.95rem;
 }
@@ -280,7 +292,7 @@ body {
 
 .lp-h1 {
   margin: 0 0 0.75rem;
-  font-size: clamp(2.5rem, 5.5vw, 3.75rem);
+  font-size: clamp(2.75rem, 6vw, 4.25rem);
   font-weight: 500;
   letter-spacing: -0.025em;
   line-height: 1.1;
@@ -339,12 +351,22 @@ body {
   display: inline-block;
 }
 
-/* Hero: off-center, left-aligned statement */
+/* Hero: centered statement */
 .lp-hero {
   padding: 2.5rem 0 0;
   min-height: min(52vh, 26rem);
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.lp-hero .lp-sub {
+  margin-inline: auto;
+}
+
+.lp-hero .lp-cta-row {
   justify-content: center;
 }
 
@@ -426,7 +448,7 @@ body {
 
 .lp-proof__grid {
   display: grid;
-  grid-template-columns: 7fr 5fr;
+  grid-template-columns: 1fr 1fr;
   gap: 1.75rem;
   align-items: start;
 }
@@ -437,10 +459,6 @@ body {
   border: 1px solid var(--oc-border);
   border-radius: var(--oc-radius-l);
   background: var(--oc-surface-raised);
-}
-
-.lp-frame--term {
-  margin-top: 3.5rem;
 }
 
 .lp-frame__bar {
@@ -481,6 +499,16 @@ body {
 
 :root[data-theme="dark"] .lp-shot--dark {
   display: block;
+}
+
+/* Desktop: browser shot fills the frame to the terminal's fixed height
+   so the two demo frames read as an equal pair */
+@media (min-width: 769px) {
+  .md-typeset .lp-shot {
+    height: 24rem;
+    object-fit: cover;
+    object-position: top center;
+  }
 }
 
 /* Terminal demo (theme-aware paper terminal) */
@@ -561,8 +589,8 @@ body {
   font-size: 0.66rem;
 }
 
-.term-demo .t-mint { color: var(--oc-brand); }
-.term-demo .t-blue { color: var(--oc-brand); }
+.term-demo .t-mint { color: var(--oc-progress-done); }
+.term-demo .t-blue { color: var(--oc-progress-active); }
 .term-demo .t-amber { color: var(--oc-warning); }
 .term-demo .t-red { color: var(--oc-danger); }
 .term-demo .t-dim { color: var(--oc-text-muted); }
@@ -612,9 +640,9 @@ body {
   min-width: 0;
 }
 
-.term-demo .t-bar__done { background: var(--oc-brand); }
-.term-demo .t-bar__ip { background: var(--oc-warning); }
-.term-demo .t-bar__new { background: color-mix(in srgb, var(--oc-text) 22%, transparent); }
+.term-demo .t-bar__done { background: var(--oc-progress-done); }
+.term-demo .t-bar__ip { background: var(--oc-progress-active); }
+.term-demo .t-bar__new { background: var(--oc-progress-new); }
 
 .term-demo .t-cursor {
   display: inline-block;
@@ -933,32 +961,9 @@ body {
   display: block;
 }
 
-/* Scroll reveals (stagger via --ri, set by javascripts/reveal.js).
-   Hidden only when JS is active (html.js); no-JS renders everything. */
-.js [data-reveal] {
-  opacity: 0;
-  transform: translateY(16px);
-  transition:
-    opacity var(--oc-dur-reveal) var(--oc-ease),
-    transform var(--oc-dur-reveal) var(--oc-ease);
-  transition-delay: calc(var(--ri, 0) * 90ms);
-}
-
-.js [data-reveal].is-in {
-  opacity: 1;
-  transform: none;
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-  }
-
-  [data-reveal],
-  .js [data-reveal] {
-    opacity: 1;
-    transform: none;
-    transition: none;
   }
 
   .term-demo .t-cursor {
@@ -978,16 +983,12 @@ body {
   }
 
   .lp-h1 {
-    font-size: 2.5rem;
+    font-size: 2.75rem;
   }
 
   .lp-proof__grid,
   .lp-ways__grid {
     grid-template-columns: 1fr;
-  }
-
-  .lp-frame--term {
-    margin-top: 0;
   }
 
   .lp-bcell--span7,
