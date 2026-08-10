@@ -980,7 +980,9 @@ body {
   }
 
   .md-typeset .lp-h1 {
-    font-size: 2.75rem;
+    /* Matches the size the hero actually rendered at before the specificity
+       fix (.md-typeset h1 used to win over .lp-h1). */
+    font-size: 2.25rem;
     padding-inline: 1rem;
   }
 
