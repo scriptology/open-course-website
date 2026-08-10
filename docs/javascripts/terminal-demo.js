@@ -89,8 +89,8 @@
         `<div class="t-progress-row">` +
         `<span class="t-progress-label"><span class="t-bold">${l.level}:</span> ` +
         `<span class="t-mint">${l.completed}</span>/` +
-        `<span class="t-amber">${l.inProgress}</span>/` +
-        `<span class="t-blue">${l.notStarted}</span></span>` +
+        `<span class="t-blue">${l.inProgress}</span>/` +
+        `<span class="t-dim">${l.notStarted}</span></span>` +
         stackedBar(l.completed, l.inProgress, l.notStarted) +
         `</div>`
     ).join("");
@@ -103,9 +103,9 @@
       `<span class="t-bold">Course:</span> ` +
       `<span class="t-mint">${COURSE.completed} (completed)</span>` +
       ` / ` +
-      `<span class="t-amber">${COURSE.inProgress} (in progress)</span>` +
+      `<span class="t-blue">${COURSE.inProgress} (in progress)</span>` +
       ` / ` +
-      `<span class="t-blue">${COURSE.notStarted} (new)</span>` +
+      `<span class="t-dim">${COURSE.notStarted} (new)</span>` +
       `</div>` +
       `<div class="t-progress-levels">${rows}</div>` +
       `</div>` +
@@ -139,7 +139,7 @@
     }
   }
 
-  async function revealLines(html) {
+  async function typeLines(html) {
     const parts = html.split("\n");
     let acc = "";
     for (let i = 0; i < parts.length; i += 1) {
@@ -149,11 +149,11 @@
     }
   }
 
-  async function revealReport() {
-    await revealLines(reportHtml());
+  async function showReport() {
+    await typeLines(reportHtml());
   }
 
-  async function revealProgress() {
+  async function showProgress() {
     // HTML structure: fade in as a block (bars need full DOM)
     screen.innerHTML = progressHtml();
     await sleep(200);
@@ -168,9 +168,9 @@
     while (true) {
       await typeAnswer();
       await showLoading();
-      await revealReport();
+      await showReport();
       await sleep(2500);
-      await revealProgress();
+      await showProgress();
       await sleep(3200);
     }
   }
