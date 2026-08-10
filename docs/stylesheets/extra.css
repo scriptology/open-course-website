@@ -290,9 +290,11 @@ body {
   box-shadow: none !important;
 }
 
-.lp-h1 {
+/* .md-typeset h1/h2 carry (0,1,1) specificity from the theme, so the
+   landing heading rules need an extra class to win the cascade. */
+.md-typeset .lp-h1 {
   margin: 0 0 0.75rem;
-  font-size: clamp(2.75rem, 6vw, 4.25rem);
+  font-size: clamp(2.75rem, 8vw, 6rem);
   font-weight: 500;
   letter-spacing: -0.025em;
   line-height: 1.1;
@@ -327,7 +329,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.25rem 0 0;
+  padding: 0;
 }
 
 .lp-topbar__home {
@@ -441,20 +443,11 @@ body {
   transform: translate(2px, -2px);
 }
 
-/* Product proof: asymmetric split, frames on white with hairline borders */
-.lp-proof__head {
-  margin-bottom: 2.5rem;
-}
-
-.lp-proof__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.75rem;
-  align-items: start;
-}
-
-.lp-frame {
+/* Demo frames on white with hairline borders */
+.md-typeset .lp-frame {
   margin: 0;
+  width: auto;
+  text-align: left;
   padding: 6px;
   border: 1px solid var(--oc-border);
   border-radius: var(--oc-radius-l);
@@ -501,14 +494,18 @@ body {
   display: block;
 }
 
-/* Desktop: browser shot fills the frame to the terminal's fixed height
-   so the two demo frames read as an equal pair */
-@media (min-width: 769px) {
-  .md-typeset .lp-shot {
-    height: 24rem;
-    object-fit: cover;
-    object-position: top center;
-  }
+/* Inside the way cards the demos are small equal-height previews */
+.lp-card .term-demo__screen {
+  height: 14rem;
+  min-height: 14rem;
+  max-height: 14rem;
+  font-size: 0.66rem;
+}
+
+.lp-card .lp-shot {
+  height: 14rem;
+  object-fit: cover;
+  object-position: top center;
 }
 
 /* Terminal demo (theme-aware paper terminal) */
@@ -982,11 +979,19 @@ body {
     padding: 2rem 0 0;
   }
 
-  .lp-h1 {
-    font-size: 2.75rem;
+  .md-typeset .lp-h1 {
+    /* Matches the size the hero actually rendered at before the specificity
+       fix (.md-typeset h1 used to win over .lp-h1). */
+    font-size: 2.25rem;
+    padding-inline: 1rem;
   }
 
-  .lp-proof__grid,
+  .lp-sub {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    padding-inline: 1rem;
+  }
+
   .lp-ways__grid {
     grid-template-columns: 1fr;
   }
@@ -995,13 +1000,6 @@ body {
   .lp-bcell--span5,
   .lp-bcell--span4 {
     grid-column: span 12;
-  }
-
-  .term-demo__screen {
-    height: 21rem;
-    min-height: 21rem;
-    max-height: 21rem;
-    font-size: 0.68rem;
   }
 
   .term-demo .t-progress-label {

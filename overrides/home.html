@@ -20,21 +20,25 @@
     </div>
   </section>
 
-  <section class="lp-proof">
-    <div class="lp-proof__head">
-      <h2 class="lp-h2">See every mistake become the next exercise</h2>
-      <p class="lp-section-sub">Real screens, real session. The web app tracks your CEFR progress while the CLI drills translations and explains each slip.</p>
-    </div>
-    <div class="lp-proof__grid">
-      <figure class="lp-frame lp-frame--browser">
-        <div class="lp-frame__bar">
-          <span class="lp-frame__dot"></span><span class="lp-frame__dot"></span><span class="lp-frame__dot"></span>
-          <span class="lp-frame__url">app.open-course.eu</span>
-        </div>
-        <img class="lp-shot lp-shot--light" src="assets/app-dashboard-light.png" alt="Open Course web app dashboard with CEFR progress and activity history" loading="lazy" />
-        <img class="lp-shot lp-shot--dark" src="assets/app-dashboard-dark.png" alt="Open Course web app dashboard with CEFR progress and activity history" loading="lazy" />
-      </figure>
-      <div class="lp-frame lp-frame--term">
+  <section class="lp-ways" id="cli">
+    <h2 class="lp-h2">Two ways in, one progress</h2>
+    <div class="lp-ways__grid">
+      <article class="lp-card">
+        <h3>Web app</h3>
+        <p>Open app.open-course.eu and practice in the browser. Dashboard, CEFR progress, and activity history. Nothing to install.</p>
+        <figure class="lp-frame lp-frame--browser">
+          <div class="lp-frame__bar">
+            <span class="lp-frame__dot"></span><span class="lp-frame__dot"></span><span class="lp-frame__dot"></span>
+            <span class="lp-frame__url">app.open-course.eu</span>
+          </div>
+          <img class="lp-shot lp-shot--light" src="assets/app-dashboard-light.png" alt="Open Course web app dashboard with CEFR progress and activity history" loading="lazy" />
+          <img class="lp-shot lp-shot--dark" src="assets/app-dashboard-dark.png" alt="Open Course web app dashboard with CEFR progress and activity history" loading="lazy" />
+        </figure>
+        <a class="lp-link" href="https://app.open-course.eu">Open app.open-course.eu</a>
+      </article>
+      <article class="lp-card">
+        <h3>CLI</h3>
+        <p>Terminal-first and local-first. Bring your own API key, or run fully local models with Ollama.</p>
         <div class="term-demo" aria-label="Animated session demo">
           <div class="term-demo__bar">
             <span class="term-demo__dot term-demo__dot--r"></span>
@@ -44,21 +48,6 @@
           </div>
           <div class="term-demo__screen" id="term-demo-screen" aria-live="polite"></div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="lp-ways" id="cli">
-    <h2 class="lp-h2">Two ways in, one progress</h2>
-    <div class="lp-ways__grid">
-      <article class="lp-card">
-        <h3>Web app</h3>
-        <p>Open app.open-course.eu and practice in the browser. Dashboard, CEFR progress, and activity history. Nothing to install.</p>
-        <a class="lp-link" href="https://app.open-course.eu">Open app.open-course.eu</a>
-      </article>
-      <article class="lp-card">
-        <h3>CLI</h3>
-        <p>Terminal-first and local-first. Bring your own API key, or run fully local models with Ollama.</p>
         <div class="hero-install">
           <div class="hero-install-inner">
             <code id="install-cmd">curl --proto '=https' --tlsv1.2 -LsSf https://github.com/scriptology/open-course-cli/releases/latest/download/opencourse-installer.sh | sh</code>
