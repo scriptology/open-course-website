@@ -294,7 +294,7 @@ body {
    landing heading rules need an extra class to win the cascade. */
 .md-typeset .lp-h1 {
   margin: 0 0 0.75rem;
-  font-size: clamp(2.75rem, 8vw, 6rem);
+  font-size: clamp(2.25rem, 5vw, 4rem);
   font-weight: 500;
   letter-spacing: -0.025em;
   line-height: 1.1;
@@ -663,7 +663,6 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.75rem;
-  margin-top: 2rem;
   align-items: stretch;
 }
 
@@ -982,7 +981,7 @@ body {
   .md-typeset .lp-h1 {
     /* Matches the size the hero actually rendered at before the specificity
        fix (.md-typeset h1 used to win over .lp-h1). */
-    font-size: 2.25rem;
+    font-size: 2rem;
     padding-inline: 1rem;
   }
 
