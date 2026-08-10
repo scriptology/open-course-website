@@ -24,15 +24,8 @@
     <div class="lp-ways__grid">
       <article class="lp-card">
         <h3>Web app</h3>
-        <p>Open app.open-course.eu and practice in the browser. Dashboard, CEFR progress, and activity history.</p>
-        <figure class="lp-frame lp-frame--browser">
-          <div class="lp-frame__bar">
-            <span class="lp-frame__dot"></span><span class="lp-frame__dot"></span><span class="lp-frame__dot"></span>
-            <span class="lp-frame__url">app.open-course.eu</span>
-          </div>
-          <img class="lp-shot lp-shot--light" src="assets/app-dashboard-light.png" alt="Open Course web app dashboard with CEFR progress and activity history" loading="lazy" />
-          <img class="lp-shot lp-shot--dark" src="assets/app-dashboard-dark.png" alt="Open Course web app dashboard with CEFR progress and activity history" loading="lazy" />
-        </figure>
+        <p>Practice in the browser. Dashboard, CEFR progress, and activity history.</p>
+        <div class="lp-dots" aria-hidden="true">{% for i in range(84) %}<span></span>{% endfor %}</div>
         <a class="lp-link" href="https://app.open-course.eu">Open app.open-course.eu</a>
       </article>
       <article class="lp-card">

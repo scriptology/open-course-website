@@ -443,55 +443,57 @@ body {
   transform: translate(2px, -2px);
 }
 
-/* Demo frames on white with hairline borders */
-.md-typeset .lp-frame {
-  margin: 0;
-  width: auto;
-  text-align: left;
-  padding: 6px;
-  border: 1px solid var(--oc-border);
-  border-radius: var(--oc-radius-l);
-  background: var(--oc-surface-raised);
+/* Decorative activity dots in the Web app card: circles cycle through
+   heatmap states like the app's progress grid. */
+.lp-dots {
+  display: grid;
+  grid-template-rows: repeat(7, 0.7rem);
+  grid-auto-flow: column;
+  grid-auto-columns: 0.7rem;
+  gap: 0.25rem;
+  margin: 0.75rem 0;
+  width: max-content;
 }
 
-.lp-frame__bar {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.55rem 0.85rem;
-}
-
-.lp-frame__dot {
-  width: 0.5rem;
-  height: 0.5rem;
+.lp-dots span {
   border-radius: 50%;
-  border: 1px solid var(--oc-text-muted);
-  opacity: 0.5;
+  background: color-mix(in srgb, var(--oc-text) 10%, transparent);
+  animation: lp-dot-cycle 8s ease-in-out infinite;
 }
 
-.lp-frame__url {
-  margin-left: 0.5rem;
-  font-family: var(--oc-font-mono);
-  font-size: 0.68rem;
-  color: var(--oc-text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.025em;
-  font-feature-settings: "calt" 0, "liga" 0;
+.lp-dots span:nth-child(3n) {
+  animation-duration: 10s;
+  animation-delay: -2.5s;
 }
 
-.md-typeset .lp-shot {
-  display: none;
-  width: 100%;
-  height: auto;
-  border: 1px solid var(--oc-border);
+.lp-dots span:nth-child(4n) {
+  animation-duration: 12s;
+  animation-delay: -6s;
 }
 
-:root[data-theme="light"] .lp-shot--light {
-  display: block;
+.lp-dots span:nth-child(5n) {
+  animation-delay: -4s;
 }
 
-:root[data-theme="dark"] .lp-shot--dark {
-  display: block;
+.lp-dots span:nth-child(7n) {
+  animation-duration: 14s;
+  animation-delay: -8s;
+}
+
+@keyframes lp-dot-cycle {
+  0%,
+  100% {
+    background: color-mix(in srgb, var(--oc-text) 10%, transparent);
+  }
+  30% {
+    background: color-mix(in srgb, var(--oc-brand) 45%, transparent);
+  }
+  55% {
+    background: color-mix(in srgb, var(--oc-brand) 90%, transparent);
+  }
+  80% {
+    background: color-mix(in srgb, var(--oc-brand) 60%, transparent);
+  }
 }
 
 /* Inside the way cards the demos are small equal-height previews */
@@ -500,12 +502,6 @@ body {
   min-height: 14rem;
   max-height: 14rem;
   font-size: 0.66rem;
-}
-
-.lp-card .lp-shot {
-  height: 14rem;
-  object-fit: cover;
-  object-position: top center;
 }
 
 /* Terminal demo (theme-aware paper terminal) */
@@ -963,6 +959,10 @@ body {
   }
 
   .term-demo .t-cursor {
+    animation: none;
+  }
+
+  .lp-dots span {
     animation: none;
   }
 }
