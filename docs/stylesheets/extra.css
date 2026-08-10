@@ -1,31 +1,7 @@
-/* Open Course landing - strict typographic design.
-   Near-white paper / near-black, sharp corners, print-inspired type:
-   Playfair Display for headings, Satoshi for UI, JetBrains Mono for code.
+/* Open Course landing - Hume-inspired scientific pastel design.
+   White paper canvas, bone card washes, ink pill CTAs, iris violet accents.
+   Satoshi for display and UI, JetBrains Mono for code and lab labels.
    Theme is selected via data-theme on <html>, set by javascripts/theme.js. */
-
-@font-face {
-  font-family: "Playfair Display";
-  src: url("../assets/fonts/PlayfairDisplay-400.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Playfair Display";
-  src: url("../assets/fonts/PlayfairDisplay-500.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Playfair Display";
-  src: url("../assets/fonts/PlayfairDisplay-500-italic.woff2") format("woff2");
-  font-weight: 500;
-  font-style: italic;
-  font-display: swap;
-}
 
 @font-face {
   font-family: "Satoshi";
@@ -65,59 +41,85 @@
 :root[data-theme="light"] {
   color-scheme: light;
 
-  --oc-bg: #f9f9f7;
-  --oc-surface: #fdfdfc;
+  --oc-bg: #ffffff;
+  --oc-surface: #fff9f3;
   --oc-surface-raised: #ffffff;
-  --oc-text: #1a1a17;
-  --oc-text-muted: #63635c;
-  --oc-border: #e0e0da;
+  --oc-text: #222222;
+  --oc-text-muted: #7a7876;
+  --oc-border: #eceae6;
 
-  --oc-brand: #2e6b4e;
-  --oc-brand-hover: #265a41;
-  --oc-brand-fg: #f9f9f7;
+  --oc-brand: #c094e4;
+  --oc-brand-hover: #a97fd9;
+  --oc-brand-fg: #ffffff;
 
-  --oc-success: #2e7d52;
-  --oc-warning: #9a6a1a;
-  --oc-danger: #b03a2e;
+  /* Primary CTA fill is ink, not violet (Hume signature) */
+  --oc-cta: #222222;
+  --oc-cta-fg: #ffffff;
 
-  --oc-focus: #2e6b4e;
+  /* Pastel washes */
+  --oc-blush: #fce0ee;
+  --oc-rose-mist: #fdebf7;
+  --oc-meringue: #ffe9cf;
+  --oc-mint: #daf7ee;
+  --oc-seafoam: #cef1e1;
 
-  /* Typographic design: flat surfaces, no shadows */
+  --oc-gradient-iris: linear-gradient(90deg, #c094e4 0%, #f7bbe6 50%, #ffb760 100%);
+
+  --oc-success: #3d9a6e;
+  --oc-warning: #b07820;
+  --oc-danger: #c25a4a;
+
+  --oc-focus: #c094e4;
+
+  /* Flat surfaces, no shadows */
   --oc-shadow-m: none;
   --oc-shadow-l: none;
 
   --oc-term-bg: #ffffff;
-  --oc-term-bar: #f1f1ed;
-  --oc-term-text: #2a2a26;
+  --oc-term-bar: #fff9f3;
+  --oc-term-text: #222222;
 }
 
 :root[data-theme="dark"] {
   color-scheme: dark;
 
-  --oc-bg: #0f0f0e;
-  --oc-surface: #171715;
-  --oc-surface-raised: #1e1e1b;
-  --oc-text: #ecebe6;
-  --oc-text-muted: #a3a29b;
-  --oc-border: #2a2a26;
+  --oc-bg: #131211;
+  --oc-surface: #1b1a18;
+  --oc-surface-raised: #232220;
+  --oc-text: #f2f1ee;
+  --oc-text-muted: #9c998f;
+  --oc-border: #2c2b28;
 
-  --oc-brand: #7cc79a;
-  --oc-brand-hover: #97d9b2;
-  --oc-brand-fg: #0f0f0e;
+  --oc-brand: #cfa9f0;
+  --oc-brand-hover: #dcc0f7;
+  --oc-brand-fg: #131211;
+
+  /* Primary CTA fill is the light ink inverse */
+  --oc-cta: #f2f1ee;
+  --oc-cta-fg: #131211;
+
+  /* Dark pastel tints */
+  --oc-blush: #2e2029;
+  --oc-rose-mist: #2a1f27;
+  --oc-meringue: #2c241c;
+  --oc-mint: #1c2a25;
+  --oc-seafoam: #1a2922;
+
+  --oc-gradient-iris: linear-gradient(90deg, #c094e4 0%, #f7bbe6 50%, #ffb760 100%);
 
   --oc-success: #7cc79a;
   --oc-warning: #d9a94e;
   --oc-danger: #e08a7d;
 
-  --oc-focus: #7cc79a;
+  --oc-focus: #cfa9f0;
 
-  /* Typographic design: flat surfaces, no shadows */
+  /* Flat surfaces, no shadows */
   --oc-shadow-m: none;
   --oc-shadow-l: none;
 
-  --oc-term-bg: #131311;
-  --oc-term-bar: #1a1a17;
-  --oc-term-text: #e6e5e0;
+  --oc-term-bg: #171614;
+  --oc-term-bar: #1e1d1a;
+  --oc-term-text: #f2f1ee;
 }
 
 /* Material theme mapping: data-md-color-scheme lives on <body>, which
@@ -168,14 +170,28 @@
 
 :root {
   --oc-font-sans: "Satoshi", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --oc-font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --oc-font-display: "Satoshi", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --oc-font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  /* Typographic design: only a hair of rounding, circles stay round */
-  --oc-radius-s: 2px;
-  --oc-radius-m: 3px;
-  --oc-radius-l: 4px;
-  --oc-radius-card: 4px;
+  /* Generous radii: small inputs, cards, and pills */
+  --oc-radius-s: 8px;
+  --oc-radius-m: 12px;
+  --oc-radius-l: 16px;
+  --oc-radius-pill: 9999px;
+
+  /* Base palette scale (reference, from the provided Tailwind palette) */
+  --oc-neutral-50: #fafafa;
+  --oc-neutral-100: #f5f5f5;
+  --oc-neutral-200: #e5e5e5;
+  --oc-neutral-500: #737373;
+  --oc-neutral-700: #404040;
+  --oc-neutral-900: #171717;
+  --oc-green-200: #b9f8cf;
+  --oc-green-300: #7bf1a8;
+  --oc-green-400: #05df72;
+  --oc-green-500: #00c758;
+  --oc-green-600: #00a544;
+  --oc-green-900: #0d542b;
 
   --oc-ease: cubic-bezier(0.16, 1, 0.3, 1);
   --oc-dur-fast: 200ms;
@@ -195,17 +211,6 @@ body {
   transition:
     background-color var(--oc-dur-fast) var(--oc-ease),
     color var(--oc-dur-fast) var(--oc-ease);
-}
-
-/* Paper tooth: fixed, pointer-events none, never on scrolling containers */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-  pointer-events: none;
-  opacity: 0.025;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 ::selection {
@@ -277,7 +282,7 @@ body::after {
   margin: 0 0 0.75rem;
   font-size: clamp(2.5rem, 5.5vw, 3.75rem);
   font-weight: 500;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.025em;
   line-height: 1.1;
 }
 
@@ -285,13 +290,15 @@ body::after {
   margin: 0 0 0.75rem;
   font-size: clamp(1.6rem, 3vw, 2.1rem);
   font-weight: 500;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.025em;
   line-height: 1.2;
 }
 
 .lp-accent {
-  font-style: italic;
-  color: var(--oc-brand);
+  background: var(--oc-gradient-iris);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .lp-sub,
@@ -341,7 +348,7 @@ body::after {
   justify-content: center;
 }
 
-/* Buttons: sharp rectangles, consistent size */
+/* Buttons: pills, primary filled with ink */
 .lp-cta-row {
   display: flex;
   flex-wrap: wrap;
@@ -359,7 +366,7 @@ body::after {
   gap: 0.5rem;
   min-height: 2.75rem;
   padding: 0.7rem 1.5rem;
-  border-radius: var(--oc-radius-m);
+  border-radius: var(--oc-radius-pill);
   font-family: var(--oc-font-sans);
   font-size: 0.95rem;
   font-weight: 500;
@@ -382,24 +389,23 @@ body::after {
 }
 
 .lp-btn--primary {
-  background: var(--oc-brand);
-  border: 1px solid var(--oc-brand);
-  color: var(--oc-brand-fg) !important;
+  background: var(--oc-cta);
+  border: 1px solid var(--oc-cta);
+  color: var(--oc-cta-fg) !important;
 }
 
 .lp-btn--primary:hover {
-  background: var(--oc-brand-hover);
-  border-color: var(--oc-brand-hover);
+  background: color-mix(in srgb, var(--oc-cta) 85%, var(--oc-cta-fg));
+  border-color: color-mix(in srgb, var(--oc-cta) 85%, var(--oc-cta-fg));
 }
 
 .lp-btn--ghost {
   background: transparent;
-  border: 1px solid color-mix(in srgb, var(--oc-border) 75%, transparent);
+  border: none;
   color: var(--oc-text) !important;
 }
 
 .lp-btn--ghost:hover {
-  border-color: var(--oc-brand);
   color: var(--oc-brand) !important;
 }
 
@@ -413,7 +419,7 @@ body::after {
   transform: translate(2px, -2px);
 }
 
-/* Product proof: asymmetric split, double-bezel frames (sharp) */
+/* Product proof: asymmetric split, frames on white with hairline borders */
 .lp-proof__head {
   margin-bottom: 2.5rem;
 }
@@ -428,9 +434,9 @@ body::after {
 .lp-frame {
   margin: 0;
   padding: 6px;
-  border: 1px solid color-mix(in srgb, var(--oc-border) 55%, transparent);
-  border-radius: var(--oc-radius-card);
-  background: var(--oc-surface);
+  border: 1px solid var(--oc-border);
+  border-radius: var(--oc-radius-l);
+  background: var(--oc-surface-raised);
 }
 
 .lp-frame--term {
@@ -457,13 +463,16 @@ body::after {
   font-family: var(--oc-font-mono);
   font-size: 0.68rem;
   color: var(--oc-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  font-feature-settings: "calt" 0, "liga" 0;
 }
 
 .md-typeset .lp-shot {
   display: none;
   width: 100%;
   height: auto;
-  border: 1px solid color-mix(in srgb, var(--oc-border) 45%, transparent);
+  border: 1px solid var(--oc-border);
 }
 
 :root[data-theme="light"] .lp-shot--light {
@@ -474,9 +483,10 @@ body::after {
   display: block;
 }
 
-/* Terminal demo (theme-aware paper terminal, sharp) */
+/* Terminal demo (theme-aware paper terminal) */
 .term-demo {
-  border: 1px solid color-mix(in srgb, var(--oc-border) 45%, transparent);
+  border: 1px solid var(--oc-border);
+  border-radius: var(--oc-radius-l);
   background: var(--oc-term-bg);
   overflow: hidden;
 }
@@ -487,7 +497,7 @@ body::after {
   gap: 0.4rem;
   padding: 0.55rem 0.85rem;
   background: var(--oc-term-bar);
-  border-bottom: 1px solid color-mix(in srgb, var(--oc-border) 45%, transparent);
+  border-bottom: 1px solid var(--oc-border);
 }
 
 .term-demo__dot {
@@ -509,6 +519,9 @@ body::after {
   font-size: 0.68rem;
   color: var(--oc-text-muted);
   font-family: var(--oc-font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  font-feature-settings: "calt" 0, "liga" 0;
 }
 
 .term-demo__screen {
@@ -527,7 +540,7 @@ body::after {
 }
 
 .term-demo .t-card {
-  border: 1px solid color-mix(in srgb, var(--oc-border) 75%, transparent);
+  border: 1px solid var(--oc-border);
   padding: 0.35rem 0.55rem 0.45rem;
   margin-bottom: 0.55rem;
 }
@@ -632,8 +645,7 @@ body::after {
 .lp-card {
   min-width: 0;
   padding: 1.75rem;
-  border: 1px solid color-mix(in srgb, var(--oc-border) 55%, transparent);
-  border-radius: var(--oc-radius-card);
+  border-radius: var(--oc-radius-l);
   background: var(--oc-surface);
   display: flex;
   flex-direction: column;
@@ -645,7 +657,7 @@ body::after {
   margin: 0;
   font-size: 1.25rem;
   font-weight: 500;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.025em;
 }
 
 .lp-card p,
@@ -682,7 +694,8 @@ body::after {
 .hero-install {
   min-width: 0;
   margin-top: auto;
-  border: 1px solid color-mix(in srgb, var(--oc-border) 75%, transparent);
+  border: 1px solid var(--oc-border);
+  border-radius: var(--oc-radius-l);
   background: var(--oc-term-bg);
 }
 
@@ -767,8 +780,7 @@ body::after {
 
 .lp-bcell {
   padding: 1.6rem;
-  border: 1px solid color-mix(in srgb, var(--oc-border) 55%, transparent);
-  border-radius: var(--oc-radius-card);
+  border-radius: var(--oc-radius-l);
   background: var(--oc-surface);
   display: flex;
   flex-direction: column;
@@ -780,13 +792,12 @@ body::after {
 .lp-bcell--span4 { grid-column: span 4; }
 
 .lp-bcell--accent {
-  background: var(--oc-brand);
-  border-color: var(--oc-brand);
+  background: var(--oc-cta);
 }
 
 .md-typeset .lp-bcell--accent h3,
 .md-typeset .lp-bcell--accent p {
-  color: var(--oc-brand-fg);
+  color: var(--oc-cta-fg);
 }
 
 .lp-bcell--accent p {
@@ -805,15 +816,15 @@ body::after {
   font-family: var(--oc-font-mono);
   font-size: 0.72rem;
   padding: 0.2rem 0.5rem;
-  border-radius: var(--oc-radius-s);
-  border: 1px solid color-mix(in srgb, var(--oc-border) 75%, transparent);
+  border-radius: var(--oc-radius-pill);
+  border: 1px solid var(--oc-border);
   color: var(--oc-text-muted);
 }
 
 .lp-cefr .is-now {
-  background: var(--oc-brand);
-  border-color: var(--oc-brand);
-  color: var(--oc-brand-fg);
+  background: var(--oc-cta);
+  border-color: var(--oc-cta);
+  color: var(--oc-cta-fg);
 }
 
 /* Providers: logo-only row */
@@ -825,7 +836,7 @@ body::after {
   margin: 0 0 2rem;
   font-size: 1.15rem;
   font-weight: 500;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.025em;
   color: var(--oc-text-muted);
 }
 
