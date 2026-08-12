@@ -2,14 +2,56 @@
 <title>{{ config.site_name }}</title>
 {% endblock %} {% block extrahead %} {{ super() }}
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6C56H4JZPS"></script>
+<!-- Google Analytics: loaded only after explicit consent (GDPR/ePrivacy). -->
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-6C56H4JZPS');
+  (function () {
+    var KEY = "opencourse.analytics-consent";
+    function load() {
+      var s = document.createElement("script");
+      s.async = true;
+      s.src = "https://www.googletagmanager.com/gtag/js?id=G-6C56H4JZPS";
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6C56H4JZPS');
+    }
+    function stored() {
+      try { return window.localStorage.getItem(KEY); } catch (e) { return null; }
+    }
+    function choose(value) {
+      try { window.localStorage.setItem(KEY, value); } catch (e) {}
+      var el = document.getElementById("oc-consent");
+      if (el) el.remove();
+      if (value === "accepted") load();
+    }
+    var choice = stored();
+    if (choice === "accepted") { load(); return; }
+    if (choice === "declined") { return; }
+    document.addEventListener("DOMContentLoaded", function () {
+      var dark = document.documentElement.getAttribute("data-theme") === "dark";
+      var bg = dark ? "#232220" : "#fff9f3";
+      var fg = dark ? "#f2f1ee" : "#222222";
+      var border = dark ? "#2c2b28" : "#eceae6";
+      var bar = document.createElement("div");
+      bar.id = "oc-consent";
+      bar.style.cssText = "position:fixed;bottom:0;left:0;right:0;z-index:1000;display:flex;gap:0.6rem;align-items:center;justify-content:center;flex-wrap:wrap;padding:0.6rem 1rem;border-top:1px solid " + border + ";background:" + bg + ";color:" + fg + ";font:0.875rem/1.4 system-ui,sans-serif;";
+      var text = document.createElement("span");
+      text.textContent = "We use Google Analytics to understand site traffic — only with your consent.";
+      var accept = document.createElement("button");
+      accept.textContent = "Accept";
+      accept.style.cssText = "padding:0.3rem 0.9rem;border:none;border-radius:0.4rem;background:" + fg + ";color:" + bg + ";cursor:pointer;font:inherit;";
+      accept.onclick = function () { choose("accepted"); };
+      var decline = document.createElement("button");
+      decline.textContent = "Decline";
+      decline.style.cssText = "padding:0.3rem 0.9rem;border:1px solid " + border + ";border-radius:0.4rem;background:transparent;color:inherit;cursor:pointer;font:inherit;";
+      decline.onclick = function () { choose("declined"); };
+      bar.appendChild(text);
+      bar.appendChild(accept);
+      bar.appendChild(decline);
+      document.body.appendChild(bar);
+    });
+  })();
 </script>
 
 <script>

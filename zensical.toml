@@ -3,7 +3,7 @@ site_name = "Open Course"
 site_description = "An AI tutor for language learning. Practice in the browser or in the terminal. Your progress stays in sync."
 site_author = "scriptology"
 site_url = "https://open-course.eu/"
-copyright = "Copyright &copy; 2026 scriptology &middot; help@open-course.eu"
+copyright = "Copyright &copy; 2026 scriptology &middot; <a href=\"https://app.open-course.eu/privacy\">Privacy</a> &middot; <a href=\"https://app.open-course.eu/terms\">Terms</a> &middot; help@open-course.eu"
 
 extra_css = ["stylesheets/extra.css"]
 extra_javascript = [
