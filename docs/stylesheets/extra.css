@@ -971,6 +971,14 @@ body {
 
 /* Mobile collapse: strict single column */
 @media (max-width: 768px) {
+  :root {
+    --md-typeset-font-size: 0.875rem;
+  }
+
+  .md-typeset {
+    font-size: 0.875rem;
+  }
+
   .lp section {
     padding: 3.5rem 0 0;
   }
