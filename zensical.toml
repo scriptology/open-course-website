@@ -16,7 +16,7 @@ extra_javascript = [
 [project.theme]
 language = "en"
 logo = "assets/logo-mini-white.svg"
-favicon = "assets/favicon.ico"
+favicon = "assets/logo-rec-black.svg"
 custom_dir = "overrides"
 font = false
 
