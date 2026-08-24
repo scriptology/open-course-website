@@ -2,11 +2,12 @@
 <title>{{ config.site_name }}</title>
 {% endblock %} {% block extrahead %} {{ super() }}
 
-<!-- Google Analytics: loaded only after explicit consent (GDPR/ePrivacy). -->
+<!-- Google Analytics and X (Twitter) pixel: loaded only after explicit
+     consent (GDPR/ePrivacy). -->
 <script>
   (function () {
     var KEY = "opencourse.analytics-consent";
-    function load() {
+    function loadGA() {
       var s = document.createElement("script");
       s.async = true;
       s.src = "https://www.googletagmanager.com/gtag/js?id=G-6C56H4JZPS";
@@ -15,6 +16,17 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-6C56H4JZPS');
+    }
+    function loadX() {
+      /* X conversion tracking base code */
+      !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+      },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+      a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+      twq('config','rd4mg');
+    }
+    function load() {
+      loadGA();
+      loadX();
     }
     function stored() {
       try { return window.localStorage.getItem(KEY); } catch (e) { return null; }
@@ -37,7 +49,7 @@
       bar.id = "oc-consent";
       bar.style.cssText = "position:fixed;bottom:0;left:0;right:0;z-index:1000;display:flex;gap:0.6rem;align-items:center;justify-content:center;flex-wrap:wrap;padding:0.6rem 1rem;border-top:1px solid " + border + ";background:" + bg + ";color:" + fg + ";font:0.875rem/1.4 system-ui,sans-serif;";
       var text = document.createElement("span");
-      text.textContent = "We use Google Analytics to understand site traffic — only with your consent.";
+      text.textContent = "We use Google Analytics and X (Twitter) conversion tracking to understand site traffic — only with your consent.";
       var accept = document.createElement("button");
       accept.textContent = "Accept";
       accept.style.cssText = "padding:0.3rem 0.9rem;border:none;border-radius:0.4rem;background:" + fg + ";color:" + bg + ";cursor:pointer;font:inherit;";
