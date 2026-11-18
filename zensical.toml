@@ -31,7 +31,7 @@ scheme = "slate"
 
 [[project.extra.social]]
 icon = "fontawesome/brands/github"
-link = "https://github.com/scriptology/open-course-cli"
+link = "https://github.com/Open-course-ai/open-course-cli"
 
 [project.markdown_extensions.admonition]
 [project.markdown_extensions.attr_list]

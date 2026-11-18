@@ -1,6 +1,6 @@
 # Open Course Website
 
-Promo landing page for [Open Course CLI](https://github.com/scriptology/open-course-cli). Built with [Zensical](https://zensical.dev).
+Promo landing page for [Open Course CLI](https://github.com/Open-course-ai/open-course-cli). Built with [Zensical](https://zensical.dev).
 
 ## Quick Start
 
